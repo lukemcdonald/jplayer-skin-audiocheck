@@ -1,0 +1,69 @@
+/**
+ * Player
+ * -----------------------------------------------------------------------------
+ */
+
+.audio-player {
+	background-color: @player-background-color;
+	border: 1px solid @border-color;
+	color: @text-color;
+	font-size: @font-size-base-rem;
+	margin: 0 auto unit( 60 / @font-size-base, em );
+	width: unit( @player-width / @font-size-base, em );
+}
+
+.jp-jplayer {
+	height: 0px;
+	width: 0px;
+}
+
+.jp-audio {
+	padding: 100% unit( 20 / @font-size-base, em ) unit( 13 / @font-size-base, em );
+	position: relative;
+	overflow: hidden;
+}
+
+.jp-no-solution {
+	padding: unit( 13 / @font-size-base, em ) unit( 20 / @font-size-base, em );
+}
+
+
+/* Track Info */
+
+.track-info {
+}
+
+.track-poster {
+	img {
+		display: block;
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: 0;
+	}
+}
+
+.track-title,
+.track-artist,
+.track-album {
+	font-weight: 700;
+	overflow: hidden;
+	position: relative;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.track-title {
+	color: @headings-color;
+	margin-top: unit( 13 / @font-size-base, em );
+}
+
+.track-artist,
+.track-album {
+	font-size: @font-size-small-rem;
+	line-height: ( @line-height-base / @font-size-small );
+}
+
+.track-album {
+	font-weight: 400;
+}

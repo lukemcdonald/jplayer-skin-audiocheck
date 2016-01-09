@@ -1,0 +1,44 @@
+.demo {
+	padding: unit( 50 / @font-size-base, em ) unit( 20 / @font-size-base, em );
+}
+
+.demo-header {
+	margin: 0 auto unit( 50 / @font-size-base, em );
+	max-width: 360px;
+	text-align: center;
+
+	h1, h2 {
+		line-height: 1.25;
+	}
+
+	h2 {
+		color: @neutral-rgba;
+		font-size: @font-size-large-rem;
+		font-weight: 400;
+		margin-bottom: unit( 20 / @font-size-large, em );
+	}
+
+	a {
+		text-decoration: underline;
+	}
+}
+
+.github-ribbon {
+	display: none;
+}
+
+.credits {
+	color: @neutral-rgba;
+	font-size: @font-size-small-rem;
+	text-align: center;
+
+	p {
+		margin-bottom: 0;
+	}
+}
+
+@media (min-width: 480px) {
+	.github-ribbon {
+		display: block;
+	}
+}
