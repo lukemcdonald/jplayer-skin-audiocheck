@@ -1,10 +1,11 @@
 .demo {
 	padding: unit( 50 / @font-size-base, em ) unit( 20 / @font-size-base, em );
+	max-width: 420px;
+	margin: auto;
 }
 
 .demo-header {
-	margin: 0 auto unit( 50 / @font-size-base, em );
-	max-width: 360px;
+	margin-bottom: unit( 50 / @font-size-base, em );
 	text-align: center;
 
 	h1, h2 {
@@ -16,6 +17,13 @@
 		font-size: @font-size-large-rem;
 		font-weight: 400;
 		margin-bottom: unit( 20 / @font-size-large, em );
+	}
+
+	h3 {
+		margin-bottom: unit( 15 / @font-size-large, em );
+		font-size: @font-size-base-rem;
+		letter-spacing: @letter-spacing;
+		text-transform: uppercase;
 	}
 
 	a {

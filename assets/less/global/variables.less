@@ -4,6 +4,8 @@
 @black:                      #000000;
 @white:                      #ffffff;
 
+@accent-color:               #e4002b;
+
 @neutral-darker:             #000000;
 @neutral-dark:               #5c5f66;
 @neutral:                    #919499;
@@ -16,14 +18,19 @@
 @neutral-light-rgba:         rgba(0,0,0,0.17);
 @neutral-lightest-rgba:      rgba(0,0,0,0.05);
 
-@accent-color:               #e4002b;
-
 @body-bg:                    @neutral-lighter;
 @text-color:                 @neutral-dark;
 @headings-color:             @neutral-darker;
 
 @link-color:                 @neutral-dark-rgba;
 @link-hover-color:           inherit;
+
+@button-color:               @neutral;
+@button-color-hover:         @accent-color;
+@button-bg-color:            transparent;
+@button-bg-color-hover:      transparent;
+@button-border-color:        currentColor;
+@button-border-color-hover:  currentColor;
 
 @border-color:               @neutral-light;
 
@@ -51,7 +58,10 @@
 
 // Icons
 
-@icon-size:                  24;
+@icon-size-large:            24;
+@icon-size:                  21;
+
+@icon-size-large-rem:        unit( @icon-size-large / 10, rem );
 @icon-size-rem:              unit( @icon-size / 10, rem );
 
 // Line Heights

@@ -5,8 +5,9 @@ window.demo = window.demo || {};
 (function( window, $, undefined ) {
 	'use strict';
 
-	var	$body = $( 'body' ),
-		demo  = window.demo;
+	var	$body   = $( 'body' ),
+		$player = $( '.audio-player' ),
+		demo    = window.demo;
 
 	$.extend( demo, {
 		config: {},
@@ -118,6 +119,25 @@ window.demo = window.demo || {};
 		},
 
 		/**
+		 * Playlist display toggles.
+		 */
+		setupPlaylistDisplay: function() {
+			var $toggles = $( '.playlist-toggles' );
+
+			$toggles.on( 'click', 'button', function( e ) {
+				var $this          = $( this ),
+					currentDisplay = $toggles.find( '.selected' ).data( 'display' ),
+					newDisplay     = $this.data( 'display' );
+
+				$toggles.find( 'button' ).removeClass( 'selected' );
+				$this.addClass( 'selected' );
+
+				$player.removeClass( 'playlist-' + currentDisplay );
+				$player.addClass( 'playlist-' + newDisplay );
+			});
+		},
+
+		/**
 		 * Create click handlers for the different tracks
 		 */
 		updatePlayer: function() {
@@ -141,6 +161,7 @@ window.demo = window.demo || {};
 	jQuery(function() {
 		demo.init();
 		demo.setupPlayer();
+		demo.setupPlaylistDisplay();
 		// demo.updatePlayer();
 	});
 

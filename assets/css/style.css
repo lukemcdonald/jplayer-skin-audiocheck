@@ -141,7 +141,6 @@ input {
 }
 input[type="checkbox"],
 input[type="radio"] {
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
   padding: 0;
 }
@@ -152,6 +151,7 @@ input[type="number"]::-webkit-outer-spin-button {
 input[type="search"] {
   -webkit-appearance: textfield;
   -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
   box-sizing: content-box;
 }
 input[type="search"]::-webkit-search-cancel-button,
@@ -232,9 +232,6 @@ i {
 }
 code {
   font-family: "Menlo", "Monaco", "Consolas", "Courier New", monospace;
-  -webkit-hyphens: none;
-  -moz-hyphens: none;
-  -ms-hyphens: none;
   hyphens: none;
 }
 pre {
@@ -243,11 +240,7 @@ pre {
   border-width: 0 0 0 10px;
   border-radius: 4px;
   font-family: "Menlo", "Monaco", "Consolas", "Courier New", monospace;
-  font-size: 19px;
   font-size: 1.2rem;
-  -webkit-hyphens: none;
-  -moz-hyphens: none;
-  -ms-hyphens: none;
   hyphens: none;
   line-height: 1.5;
   margin-bottom: 1.75em;
@@ -265,11 +258,9 @@ pre {
 *,
 *:before,
 *:after {
-  -moz-box-sizing: inherit;
   box-sizing: inherit;
 }
 html {
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
   font-size: 62.5%;
   overflow-y: scroll;
@@ -313,26 +304,85 @@ img {
 figure {
   margin: 0;
 }
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+.button {
+  background-color: transparent;
+  border: 1px solid currentColor;
+  border-radius: 4px;
+  color: #919499;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.2rem;
+  letter-spacing: 0.1em;
+  margin: 0;
+  outline: none;
+  overflow: hidden;
+  padding: 0.58333333em 1em;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.4s ease-in-out;
+  white-space: nowrap;
+}
+button:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover,
+.button:hover,
+button:focus,
+input[type="button"]:focus,
+input[type="reset"]:focus,
+input[type="submit"]:focus,
+.button:focus {
+  background-color: transparent;
+  color: #e4002b;
+  text-decoration: none;
+}
+button.selected,
+input[type="button"].selected,
+input[type="reset"].selected,
+input[type="submit"].selected,
+.button.selected {
+  background-color: #e4002b;
+  border-color: #e4002b;
+  color: #ffffff;
+  text-decoration: none;
+}
 /**
  * Animations
  * -----------------------------------------------------------------------------
  */
 .fade-in,
 .fade-out {
-  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  -webkit-transform: translatez();
   transform: translatez();
 }
 .fade-in {
-  -webkit-animation: fade-in 0.4s ease-in;
   animation: fade-in 0.4s ease-in;
 }
 .fade-out {
-  -webkit-animation: fade-out 0.4s ease-in;
   animation: fade-out 0.4s ease-in;
 }
 @-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-o-keyframes fade-in {
   0% {
     opacity: 0;
   }
@@ -356,6 +406,22 @@ figure {
     opacity: 0;
   }
 }
+@-moz-keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-o-keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 @keyframes fade-out {
   0% {
     opacity: 1;
@@ -366,10 +432,11 @@ figure {
 }
 .demo {
   padding: 3.57142857em 1.42857143em;
+  max-width: 420px;
+  margin: auto;
 }
 .demo-header {
-  margin: 0 auto 3.57142857em;
-  max-width: 360px;
+  margin-bottom: 3.57142857em;
   text-align: center;
 }
 .demo-header h1,
@@ -378,10 +445,15 @@ figure {
 }
 .demo-header h2 {
   color: rgba(0, 0, 0, 0.42);
-  font-size: 33px;
   font-size: 2.1rem;
   font-weight: 400;
   margin-bottom: 0.95238095em;
+}
+.demo-header h3 {
+  margin-bottom: 0.71428571em;
+  font-size: 1.4rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 .demo-header a {
   text-decoration: underline;
@@ -391,7 +463,6 @@ figure {
 }
 .credits {
   color: rgba(0, 0, 0, 0.42);
-  font-size: 19px;
   font-size: 1.2rem;
   text-align: center;
 }
@@ -411,7 +482,6 @@ figure {
   background-color: #ffffff;
   border: 1px solid #d4d5d6;
   color: #5c5f66;
-  font-size: 22px;
   font-size: 1.4rem;
   margin: 0 auto 4.28571429em;
   width: 15.85714286em;
@@ -421,7 +491,6 @@ figure {
   width: 0px;
 }
 .jp-audio {
-  padding: 100% 1.42857143em 0.92857143em;
   position: relative;
   overflow: hidden;
 }
@@ -429,6 +498,9 @@ figure {
   padding: 0.92857143em 1.42857143em;
 }
 /* Track Info */
+.track-info {
+  padding: 100% 1.42857143em 0.92857143em;
+}
 .track-poster img {
   display: block;
   position: absolute;
@@ -451,7 +523,6 @@ figure {
 }
 .track-artist,
 .track-album {
-  font-size: 19px;
   font-size: 1.2rem;
   line-height: 1.75;
 }
@@ -460,26 +531,24 @@ figure {
 }
 /* jPlayer: Cotrols
 ----------------------------------------------- */
-.jp-audio:hover .jp-interface {
+.jp-interface:hover .jp-controls-wrap {
   background-color: rgba(0, 0, 0, 0.8);
 }
-.jp-audio:hover .jp-controls {
+.jp-interface:hover .jp-controls {
   opacity: 1;
 }
-.jp-interface {
+.jp-controls-wrap {
   background-color: rgba(0, 0, 0, 0);
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  padding-top: calc(100% + 40px);
-  -webkit-transition: background-color 0.4s ease-in-out;
+  padding-top: 100%;
   transition: background-color 0.4s ease-in-out;
   z-index: 2;
 }
 .jp-controls {
   opacity: 0;
-  -webkit-transition: opacity 0.4s ease-in-out;
   transition: opacity 0.4s ease-in-out;
 }
 .jp-button {
@@ -491,31 +560,25 @@ figure {
   border: 2px solid #ffffff;
   border-radius: 100%;
   color: #ffffff;
-  cursor: pointer;
   display: block;
-  height: 3.57142857em;
-  margin: 0;
-  outline: none;
-  overflow: hidden;
+  height: 3.33333333em;
+  letter-spacing: 0;
   padding: 0;
-  position: relative;
+  margin: 0;
   text-indent: 110%;
-  -webkit-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
   transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
-  white-space: nowrap;
-  width: 3.57142857em;
+  width: 3.33333333em;
 }
 .jp-button button:before {
-  font-size: 38px;
-  font-size: 2.4rem;
-  line-height: 1.91666667;
+  font-size: 2.1rem;
+  line-height: 1.85714286;
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   text-align: center;
-  text-indent: 0;
+  text-indent: 0.04761905em;
 }
 .jp-button button:hover {
   border-color: #e4002b;
@@ -526,9 +589,16 @@ figure {
   margin-top: -1.78571429em;
   margin-left: -1.78571429em;
 }
+.jp-button-play button {
+  font-size: 1.4rem;
+  height: 3.57142857em;
+  width: 3.57142857em;
+}
 .jp-button-play button:before {
   content: "\f152";
-  text-indent: 0.21428571em;
+  font-size: 2.4rem;
+  line-height: 1.91666667;
+  text-indent: 0.16666667em;
 }
 .jp-state-playing .jp-button-play button:before {
   content: "\f151";
@@ -536,14 +606,12 @@ figure {
 }
 .jp-button-previous,
 .jp-button-next {
-  margin-top: -1.78571429em;
-  margin-left: -1.78571429em;
-  font-size: 19px;
-  font-size: 1.2rem;
+  margin-top: -1.42857143em;
+  margin-left: -1.42857143em;
 }
 .jp-button-previous button:before,
 .jp-button-next button:before {
-  line-height: 1.625;
+  font-size: 21px;
 }
 .jp-button-previous {
   left: 25%;
@@ -567,14 +635,55 @@ figure {
 ----------------------------------------------- */
 .jp-playlist {
   display: none;
+  border-top: 1px solid #d4d5d6;
+  font-size: 1.2rem;
 }
-/* Playlist Open */
-.playlist-open .track-info {
-  padding-top: 0.92857143em;
-  padding-bottom: 100%;
+.jp-playlist ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
-.playlist-open .jp-controls {
+.jp-playlist li {
+  border-bottom: 1px solid #d4d5d6;
+}
+.jp-playlist li:last-child {
+  border-bottom-width: 0;
+}
+.jp-playlist a {
+  display: block;
+  outline: 0;
+  padding: 0.92857143em 1.42857143em;
+}
+.jp-playlist a:hover,
+.jp-playlist a:focus {
+  background-color: #f2f2f2;
+  text-decoration: none;
+}
+.jp-state-playing .jp-playlist-current a {
+  color: #000000;
+}
+.jp-free-media {
   display: none;
+}
+.jp-playlist-item-remove {
+  display: inline-block;
+  float: right;
+}
+/* Scroll Playlist */
+.playlist-bottom .jp-playlist {
+  display: block;
+}
+/* Scroll Playlist */
+.playlist-scroll .jp-audio {
+  overflow: auto;
+}
+.playlist-scroll .jp-playlist {
+  display: block;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
 }
 /* jPlayer: Progress Bar
 ----------------------------------------------- */
@@ -600,4 +709,3 @@ figure {
   margin-top: -1px;
   opacity: .8;
 }
-

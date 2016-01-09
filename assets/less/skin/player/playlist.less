@@ -3,16 +3,50 @@
 
 .jp-playlist {
 	display: none;
+	border-top: 1px solid @border-color;
+	font-size: @font-size-small-rem;
+
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		width: 100%;
+	}
+
+	li {
+		border-bottom: 1px solid @border-color;
+
+		&:last-child {
+			border-bottom-width: 0;
+		}
+	}
+
+	a {
+		display: block;
+		outline: 0;
+		padding: unit( 13 / @font-size-base, em ) unit( 20 / @font-size-base, em );
+
+		&:hover,
+		&:focus {
+			background-color: @neutral-lighter;
+			text-decoration: none;
+		}
+	}
 }
 
-/* Playlist Open */
-.playlist-open {
-	.track-info {
-		padding-top: unit( 13 / @font-size-base, em );
-		padding-bottom: 100%;
+.jp-state-playing {
+	.jp-playlist-current {
+		a {
+			color: @headings-color;
+		}
 	}
+}
 
-	.jp-controls {
-		display: none;
-	}
+.jp-free-media {
+	display: none;
+}
+
+.jp-playlist-item-remove {
+	display: inline-block;
+	float: right;
 }
