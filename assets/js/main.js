@@ -7,7 +7,8 @@ window.demo = window.demo || {};
 
 	var	$body   = $( 'body' ),
 		$player = $( '.audio-player' ),
-		demo    = window.demo;
+		demo    = window.demo,
+		jPlaylist;
 
 	$.extend( demo, {
 		config: {},
@@ -22,42 +23,54 @@ window.demo = window.demo || {};
 		setupPlayer: function() {
 			var posterSize = 220;
 
-			new jPlayerPlaylist({
+			jPlaylist = new jPlayerPlaylist({
 				jPlayer: '#jquery_jplayer_1',
 				cssSelectorAncestor: '#jp_container_1'
 			}, [
 				{
 					title: 'Cro Magnon Man',
+					artist: 'The Stark Palace',
+					record: 'Record Name',
 					mp3: 'http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3',
 					oga: 'http://www.jplayer.org/audio/ogg/TSP-01-Cro_magnon_man.ogg',
 					poster: 'http://placehold.it/' + posterSize + '?text=Cro+Magnon+Man'
 				},
 				{
 					title: 'Your Face',
+					artist: 'The Stark Palace',
+					record: 'Record Name',
 					mp3: 'http://www.jplayer.org/audio/mp3/TSP-05-Your_face.mp3',
 					oga: 'http://www.jplayer.org/audio/ogg/TSP-05-Your_face.ogg',
 					poster: 'http://placehold.it/' + posterSize + '?text=Your+Face'
 				},
 				{
 					title: 'Cyber Sonnet',
+					artist: 'The Stark Palace',
+					record: 'Record Name',
 					mp3: 'http://www.jplayer.org/audio/mp3/TSP-07-Cybersonnet.mp3',
 					oga: 'http://www.jplayer.org/audio/ogg/TSP-07-Cybersonnet.ogg',
 					poster: 'http://placehold.it/' + posterSize + '?text=Cyber+Sonnet'
 				},
 				{
 					title: 'Tempered Song',
+					artist: 'Miaow',
+					record: 'Record Name',
 					mp3: 'http://www.jplayer.org/audio/mp3/Miaow-01-Tempered-song.mp3',
 					oga: 'http://www.jplayer.org/audio/ogg/Miaow-01-Tempered-song.ogg',
 					poster: 'http://placehold.it/' + posterSize + '?text=Tempered+Song'
 				},
 				{
 					title: 'Hidden',
+					artist: 'Miaow',
+					record: 'Record Name',
 					mp3: 'http://www.jplayer.org/audio/mp3/Miaow-02-Hidden.mp3',
 					oga: 'http://www.jplayer.org/audio/ogg/Miaow-02-Hidden.ogg',
 					poster: 'http://placehold.it/' + posterSize + '?text=Hidden'
 				},
 				{
 					title: 'Lentement',
+					artist: 'Miaow',
+					record: 'Record Name',
 					free:true,
 					mp3: 'http://www.jplayer.org/audio/mp3/Miaow-03-Lentement.mp3',
 					oga: 'http://www.jplayer.org/audio/ogg/Miaow-03-Lentement.ogg',
@@ -65,24 +78,32 @@ window.demo = window.demo || {};
 				},
 				{
 					title: 'Lismore',
+					artist: 'Miaow',
+					record: 'Record Name',
 					mp3: 'http://www.jplayer.org/audio/mp3/Miaow-04-Lismore.mp3',
 					oga: 'http://www.jplayer.org/audio/ogg/Miaow-04-Lismore.ogg',
 					poster: 'http://placehold.it/' + posterSize + '?text=Lismore'
 				},
 				{
 					title: 'The Separation',
+					artist: 'Miaow',
+					record: 'Record Name',
 					mp3: 'http://www.jplayer.org/audio/mp3/Miaow-05-The-separation.mp3',
 					oga: 'http://www.jplayer.org/audio/ogg/Miaow-05-The-separation.ogg',
 					poster: 'http://placehold.it/' + posterSize + '?text=The+Separation'
 				},
 				{
 					title: 'Beside Me',
+					artist: 'Miaow',
+					record: 'Record Name',
 					mp3: 'http://www.jplayer.org/audio/mp3/Miaow-06-Beside-me.mp3',
 					oga: 'http://www.jplayer.org/audio/ogg/Miaow-06-Beside-me.ogg',
 					poster: 'http://placehold.it/' + posterSize + '?text=Beside+Me'
 				},
 				{
 					title: 'Bubble',
+					artist: 'Miaow',
+					record: 'Record Name',
 					free:true,
 					mp3: 'http://www.jplayer.org/audio/mp3/Miaow-07-Bubble.mp3',
 					oga: 'http://www.jplayer.org/audio/ogg/Miaow-07-Bubble.ogg',
@@ -90,12 +111,16 @@ window.demo = window.demo || {};
 				},
 				{
 					title: 'Stirring of a Fool',
+					artist: 'Miaow',
+					record: 'Record Name',
 					mp3: 'http://www.jplayer.org/audio/mp3/Miaow-08-Stirring-of-a-fool.mp3',
 					oga: 'http://www.jplayer.org/audio/ogg/Miaow-08-Stirring-of-a-fool.ogg',
 					poster: 'http://placehold.it/' + posterSize + '?text=Stirring+of+a+Fool'
 				},
 				{
 					title: 'Partir',
+					artist: 'Miaow',
+					record: 'Record Name',
 					free: true,
 					mp3: 'http://www.jplayer.org/audio/mp3/Miaow-09-Partir.mp3',
 					oga: 'http://www.jplayer.org/audio/ogg/Miaow-09-Partir.ogg',
@@ -103,6 +128,8 @@ window.demo = window.demo || {};
 				},
 				{
 					title: 'Thin Ice',
+					artist: 'Miaow',
+					record: 'Record Name',
 					mp3: 'http://www.jplayer.org/audio/mp3/Miaow-10-Thin-ice.mp3',
 					oga: 'http://www.jplayer.org/audio/ogg/Miaow-10-Thin-ice.ogg',
 					poster: 'http://placehold.it/' + posterSize + '?text=Thin+Ice'
@@ -113,13 +140,21 @@ window.demo = window.demo || {};
 				wmode: 'window',
 				useStateClassSkin: true,
 				autoBlur: false,
-				// smoothPlayBar: true,
-				keyEnabled: true
+				keyEnabled: true,
+				ready: function() {
+					demo.updateCurrentTrack();
+				},
+				play: function() {
+					demo.updateCurrentTrack();
+				},
+				ended: function() {
+					demo.updateCurrentTrack();
+				}
 			});
 		},
 
 		/**
-		 * Playlist display toggles.
+		 * Playlist toggle buttons and display.
 		 */
 		setupPlaylistDisplay: function() {
 			var $toggles = $( '.playlist-toggles' );
@@ -138,22 +173,19 @@ window.demo = window.demo || {};
 		},
 
 		/**
-		 * Create click handlers for the different tracks
+		 * Update current track info when playlist changes.
 		 */
-		updatePlayer: function() {
-			// var $player    = $( '#jquery_jplayer_1' ),
-			// 	$playlist  = $( '.audio-player' ),
-			// 	$trackName = $( '.track-name' );
+		updateCurrentTrack: function() {
+			var $trackPoster  = $( '.track-poster img' ),
+				$trackTitle  = $( '.track-title' ),
+				$trackArtist = $( '.track-artist' ),
+				$trackRecord = $( '.track-record' ),
+				currentTrack = jPlaylist.playlist[jPlaylist.current];
 
-			// $playlist.on( 'click', '.track', function( e ) {
-			// 	var $this = $( this );
-
-			// 	$trackName.text( $this.text() );
-
-			// 	$this.blur();
-
-			// 	return false;
-			// }
+			$trackPoster.attr( 'src', currentTrack.poster );
+			$trackTitle.text( currentTrack.title );
+			$trackArtist.text( currentTrack.artist );
+			$trackRecord.text( currentTrack.record );
 		}
 	});
 
@@ -162,7 +194,6 @@ window.demo = window.demo || {};
 		demo.init();
 		demo.setupPlayer();
 		demo.setupPlaylistDisplay();
-		// demo.updatePlayer();
 	});
 
 })( this, jQuery );
