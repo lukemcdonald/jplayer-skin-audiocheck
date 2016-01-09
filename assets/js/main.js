@@ -21,35 +21,26 @@ window.demo = window.demo || {};
 		 * Initialize the jPlayer and playlist.
 		 */
 		setupPlayer: function() {
-			var posterSize = 220;
-
 			jPlaylist = new jPlayerPlaylist({
 				jPlayer: '#jquery_jplayer_1',
 				cssSelectorAncestor: '#jp_container_1'
 			}, [
+				{
+					title: 'Bubble',
+					artist: 'Miaow',
+					record: 'Record Name',
+					free:true,
+					mp3: 'http://www.jplayer.org/audio/mp3/Miaow-07-Bubble.mp3',
+					oga: 'http://www.jplayer.org/audio/ogg/Miaow-07-Bubble.ogg',
+					poster: 'assets/images/poster-audiotheme.jpg'
+				},
 				{
 					title: 'Cro Magnon Man',
 					artist: 'The Stark Palace',
 					record: 'Record Name',
 					mp3: 'http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3',
 					oga: 'http://www.jplayer.org/audio/ogg/TSP-01-Cro_magnon_man.ogg',
-					poster: 'http://placehold.it/' + posterSize + '?text=Cro+Magnon+Man'
-				},
-				{
-					title: 'Your Face',
-					artist: 'The Stark Palace',
-					record: 'Record Name',
-					mp3: 'http://www.jplayer.org/audio/mp3/TSP-05-Your_face.mp3',
-					oga: 'http://www.jplayer.org/audio/ogg/TSP-05-Your_face.ogg',
-					poster: 'http://placehold.it/' + posterSize + '?text=Your+Face'
-				},
-				{
-					title: 'Cyber Sonnet',
-					artist: 'The Stark Palace',
-					record: 'Record Name',
-					mp3: 'http://www.jplayer.org/audio/mp3/TSP-07-Cybersonnet.mp3',
-					oga: 'http://www.jplayer.org/audio/ogg/TSP-07-Cybersonnet.ogg',
-					poster: 'http://placehold.it/' + posterSize + '?text=Cyber+Sonnet'
+					poster: 'assets/images/poster-stark-palace.jpg'
 				},
 				{
 					title: 'Tempered Song',
@@ -57,7 +48,15 @@ window.demo = window.demo || {};
 					record: 'Record Name',
 					mp3: 'http://www.jplayer.org/audio/mp3/Miaow-01-Tempered-song.mp3',
 					oga: 'http://www.jplayer.org/audio/ogg/Miaow-01-Tempered-song.ogg',
-					poster: 'http://placehold.it/' + posterSize + '?text=Tempered+Song'
+					poster: 'assets/images/poster-audiotheme.jpg'
+				},
+				{
+					title: 'Your Face',
+					artist: 'The Stark Palace',
+					record: 'Record Name',
+					mp3: 'http://www.jplayer.org/audio/mp3/TSP-05-Your_face.mp3',
+					oga: 'http://www.jplayer.org/audio/ogg/TSP-05-Your_face.ogg',
+					poster: 'assets/images/poster-stark-palace.jpg'
 				},
 				{
 					title: 'Hidden',
@@ -65,7 +64,7 @@ window.demo = window.demo || {};
 					record: 'Record Name',
 					mp3: 'http://www.jplayer.org/audio/mp3/Miaow-02-Hidden.mp3',
 					oga: 'http://www.jplayer.org/audio/ogg/Miaow-02-Hidden.ogg',
-					poster: 'http://placehold.it/' + posterSize + '?text=Hidden'
+					poster: 'assets/images/poster-audiotheme.jpg'
 				},
 				{
 					title: 'Lentement',
@@ -74,7 +73,15 @@ window.demo = window.demo || {};
 					free:true,
 					mp3: 'http://www.jplayer.org/audio/mp3/Miaow-03-Lentement.mp3',
 					oga: 'http://www.jplayer.org/audio/ogg/Miaow-03-Lentement.ogg',
-					poster: 'http://placehold.it/' + posterSize + '?text=Lentement'
+					poster: 'assets/images/poster-audiotheme.jpg'
+				},
+				{
+					title: 'Cyber Sonnet',
+					artist: 'The Stark Palace',
+					record: 'Record Name',
+					mp3: 'http://www.jplayer.org/audio/mp3/TSP-07-Cybersonnet.mp3',
+					oga: 'http://www.jplayer.org/audio/ogg/TSP-07-Cybersonnet.ogg',
+					poster: 'assets/images/poster-stark-palace.jpg'
 				},
 				{
 					title: 'Lismore',
@@ -82,7 +89,7 @@ window.demo = window.demo || {};
 					record: 'Record Name',
 					mp3: 'http://www.jplayer.org/audio/mp3/Miaow-04-Lismore.mp3',
 					oga: 'http://www.jplayer.org/audio/ogg/Miaow-04-Lismore.ogg',
-					poster: 'http://placehold.it/' + posterSize + '?text=Lismore'
+					poster: 'assets/images/poster-audiotheme.jpg'
 				},
 				{
 					title: 'The Separation',
@@ -90,7 +97,7 @@ window.demo = window.demo || {};
 					record: 'Record Name',
 					mp3: 'http://www.jplayer.org/audio/mp3/Miaow-05-The-separation.mp3',
 					oga: 'http://www.jplayer.org/audio/ogg/Miaow-05-The-separation.ogg',
-					poster: 'http://placehold.it/' + posterSize + '?text=The+Separation'
+					poster: 'assets/images/poster-audiotheme.jpg'
 				},
 				{
 					title: 'Beside Me',
@@ -98,16 +105,7 @@ window.demo = window.demo || {};
 					record: 'Record Name',
 					mp3: 'http://www.jplayer.org/audio/mp3/Miaow-06-Beside-me.mp3',
 					oga: 'http://www.jplayer.org/audio/ogg/Miaow-06-Beside-me.ogg',
-					poster: 'http://placehold.it/' + posterSize + '?text=Beside+Me'
-				},
-				{
-					title: 'Bubble',
-					artist: 'Miaow',
-					record: 'Record Name',
-					free:true,
-					mp3: 'http://www.jplayer.org/audio/mp3/Miaow-07-Bubble.mp3',
-					oga: 'http://www.jplayer.org/audio/ogg/Miaow-07-Bubble.ogg',
-					poster: 'http://placehold.it/' + posterSize + '?text=Bubble'
+					poster: 'assets/images/poster-audiotheme.jpg'
 				},
 				{
 					title: 'Stirring of a Fool',
@@ -115,7 +113,7 @@ window.demo = window.demo || {};
 					record: 'Record Name',
 					mp3: 'http://www.jplayer.org/audio/mp3/Miaow-08-Stirring-of-a-fool.mp3',
 					oga: 'http://www.jplayer.org/audio/ogg/Miaow-08-Stirring-of-a-fool.ogg',
-					poster: 'http://placehold.it/' + posterSize + '?text=Stirring+of+a+Fool'
+					poster: 'assets/images/poster-audiotheme.jpg'
 				},
 				{
 					title: 'Partir',
@@ -124,7 +122,7 @@ window.demo = window.demo || {};
 					free: true,
 					mp3: 'http://www.jplayer.org/audio/mp3/Miaow-09-Partir.mp3',
 					oga: 'http://www.jplayer.org/audio/ogg/Miaow-09-Partir.ogg',
-					poster: 'http://placehold.it/' + posterSize + '?text=Partir'
+					poster: 'assets/images/poster-audiotheme.jpg'
 				},
 				{
 					title: 'Thin Ice',
@@ -132,7 +130,7 @@ window.demo = window.demo || {};
 					record: 'Record Name',
 					mp3: 'http://www.jplayer.org/audio/mp3/Miaow-10-Thin-ice.mp3',
 					oga: 'http://www.jplayer.org/audio/ogg/Miaow-10-Thin-ice.ogg',
-					poster: 'http://placehold.it/' + posterSize + '?text=Thin+Ice'
+					poster: 'assets/images/poster-audiotheme.jpg'
 				}
 			], {
 				swfPath: 'assets/js/vendor',
