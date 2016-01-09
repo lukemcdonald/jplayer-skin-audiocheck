@@ -2,8 +2,10 @@
 ----------------------------------------------- */
 
 .jp-playlist {
+	background-color: @white;
+	border: solid @border-color;
+	border-width: 1px 0 0 0;
 	display: none;
-	border-top: 1px solid @border-color;
 	font-size: @font-size-small-rem;
 
 	ul {
@@ -32,6 +34,12 @@
 			text-decoration: none;
 		}
 	}
+}
+
+.jp-playlist-item {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }
 
 .jp-state-playing {

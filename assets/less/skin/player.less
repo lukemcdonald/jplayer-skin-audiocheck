@@ -4,11 +4,12 @@
  */
 
 .audio-player {
-	background-color: @player-background-color;
 	border: 1px solid @border-color;
 	color: @text-color;
 	font-size: @font-size-base-rem;
 	margin: 0 auto unit( 60 / @font-size-base, em );
+	position: relative;
+	transition: left @transition-duration ease-in-out;
 	width: unit( @player-width / @font-size-base, em );
 }
 
@@ -19,7 +20,6 @@
 
 .jp-audio {
 	position: relative;
-	overflow: hidden;
 }
 
 .jp-no-solution {
@@ -30,22 +30,21 @@
 /* Track Info */
 
 .track-info {
+	background-color: @player-background-color;
 	padding: 100% unit( 20 / @font-size-base, em ) unit( 13 / @font-size-base, em );
 }
 
 .track-poster {
-	img {
-		display: block;
-		position: absolute;
-		top: 0;
-		right: 0;
-		left: 0;
-	}
+	background-color: @neutral-darker;
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
 }
 
 .track-title,
 .track-artist,
-.track-album {
+.track-record {
 	font-weight: 700;
 	overflow: hidden;
 	position: relative;
@@ -59,11 +58,11 @@
 }
 
 .track-artist,
-.track-album {
+.track-record {
 	font-size: @font-size-small-rem;
 	line-height: ( @line-height-base / @font-size-small );
 }
 
-.track-album {
+.track-record {
 	font-weight: 400;
 }

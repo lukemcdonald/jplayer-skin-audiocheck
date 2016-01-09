@@ -350,6 +350,7 @@ input[type="submit"].selected,
   border-color: #e4002b;
   color: #ffffff;
   text-decoration: none;
+  transition: none;
 }
 /**
  * Animations
@@ -479,11 +480,12 @@ input[type="submit"].selected,
  * -----------------------------------------------------------------------------
  */
 .audio-player {
-  background-color: #ffffff;
   border: 1px solid #d4d5d6;
   color: #5c5f66;
   font-size: 1.4rem;
   margin: 0 auto 4.28571429em;
+  position: relative;
+  transition: left 0.4s ease-in-out;
   width: 15.85714286em;
 }
 .jp-jplayer {
@@ -492,17 +494,17 @@ input[type="submit"].selected,
 }
 .jp-audio {
   position: relative;
-  overflow: hidden;
 }
 .jp-no-solution {
   padding: 0.92857143em 1.42857143em;
 }
 /* Track Info */
 .track-info {
+  background-color: #ffffff;
   padding: 100% 1.42857143em 0.92857143em;
 }
-.track-poster img {
-  display: block;
+.track-poster {
+  background-color: #000000;
   position: absolute;
   top: 0;
   right: 0;
@@ -510,7 +512,7 @@ input[type="submit"].selected,
 }
 .track-title,
 .track-artist,
-.track-album {
+.track-record {
   font-weight: 700;
   overflow: hidden;
   position: relative;
@@ -522,11 +524,11 @@ input[type="submit"].selected,
   margin-top: 0.92857143em;
 }
 .track-artist,
-.track-album {
+.track-record {
   font-size: 1.2rem;
   line-height: 1.75;
 }
-.track-album {
+.track-record {
   font-weight: 400;
 }
 /* jPlayer: Cotrols
@@ -545,7 +547,6 @@ input[type="submit"].selected,
   right: 0;
   padding-top: 100%;
   transition: background-color 0.4s ease-in-out;
-  z-index: 2;
 }
 .jp-controls {
   opacity: 0;
@@ -634,8 +635,10 @@ input[type="submit"].selected,
 /* jPlayer: Playlist
 ----------------------------------------------- */
 .jp-playlist {
+  background-color: #ffffff;
+  border: solid #d4d5d6;
+  border-width: 1px 0 0 0;
   display: none;
-  border-top: 1px solid #d4d5d6;
   font-size: 1.2rem;
 }
 .jp-playlist ul {
@@ -660,6 +663,11 @@ input[type="submit"].selected,
   background-color: #f2f2f2;
   text-decoration: none;
 }
+.jp-playlist-item {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 .jp-state-playing .jp-playlist-current a {
   color: #000000;
 }
@@ -670,11 +678,11 @@ input[type="submit"].selected,
   display: inline-block;
   float: right;
 }
-/* Scroll Playlist */
+/* Playlist: Bottom */
 .playlist-bottom .jp-playlist {
   display: block;
 }
-/* Scroll Playlist */
+/* Playlist: Scroll */
 .playlist-scroll .jp-audio {
   overflow: auto;
 }
@@ -684,6 +692,29 @@ input[type="submit"].selected,
   top: 100%;
   right: 0;
   left: 0;
+}
+/* Playlist: Side */
+.playlist-side {
+  left: -110px;
+}
+.playlist-side .jp-interface {
+  box-shadow: 1px 0 #d4d5d6;
+  position: relative;
+  z-index: 2;
+}
+.playlist-side .jp-playlist {
+  border-width: 0 1px;
+  box-shadow: 0 1px #d4d5d6, 0 -1px #d4d5d6;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 100%;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  transition: left 0.4s ease-in-out;
+  z-index: 1;
 }
 /* jPlayer: Progress Bar
 ----------------------------------------------- */

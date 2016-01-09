@@ -1,4 +1,4 @@
-/* Scroll Playlist */
+/* Playlist: Bottom */
 
 .playlist-bottom {
 	.jp-playlist {
@@ -6,7 +6,7 @@
 	}
 }
 
-/* Scroll Playlist */
+/* Playlist: Scroll */
 
 .playlist-scroll {
 	.jp-audio {
@@ -19,5 +19,32 @@
 		top: 100%;
 		right: 0;
 		left: 0;
+	}
+}
+
+/* Playlist: Side */
+
+.playlist-side {
+	left: -110px;
+
+	.jp-interface {
+		box-shadow: 1px 0 @border-color;
+		position: relative;
+		z-index: 2;
+	}
+
+	.jp-playlist {
+		border-width: 0 1px;
+		box-shadow: 0 1px @border-color, 0 -1px @border-color;
+		display: block;
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: 100%;
+		width: 100%;
+		height: 100%;
+		overflow: auto;
+		transition: left @transition-duration ease-in-out;
+		z-index: 1;
 	}
 }
