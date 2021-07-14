@@ -38,13 +38,13 @@
 	border-radius: 100%;
 	color: @white;
 	display: block;
-	height: unit( 40 / @font-size-small, em );
+	height: unit( (40 / @font-size-small), em );
 	letter-spacing: 0;
 	padding: 0;
 	margin: 0;
 	text-indent: 110%;
 	transition: color ( @transition-duration / 2 ) ease-in-out, border-color ( @transition-duration / 2 ) ease-in-out;
-	width: unit( 40 / @font-size-small, em );
+	width: unit( (40 / @font-size-small), em );
 
 	&:before {
 		font-size: @icon-size-rem;
@@ -55,7 +55,7 @@
 		bottom: 0;
 		left: 0;
 		text-align: center;
-		text-indent: unit( 1 / @icon-size, em );
+		text-indent: unit( (1 / @icon-size), em );
 	}
 
 	&:hover {
@@ -66,19 +66,19 @@
 
 .jp-button-play {
 	left: 50%;
-	margin-top: unit( -25 / @font-size-base, em );
-	margin-left: unit( -25 / @font-size-base, em );
+	margin-top: unit( (-25 / @font-size-base), em );
+	margin-left: unit( (-25 / @font-size-base), em );
 
 	button {
 		font-size: @font-size-base-rem;
-		height: unit( 50 / @font-size-base, em );
-		width: unit( 50 / @font-size-base, em );
+		height: unit( (50 / @font-size-base), em );
+		width: unit( (50 / @font-size-base), em );
 
 		&:before {
 			content: "\f152"; // Play
 			font-size: @icon-size-large-rem;
 			line-height: ( 46 / @icon-size-large ); // minus 4px border
-			text-indent: unit( 4 / @icon-size-large, em );
+			text-indent: unit( (4 / @icon-size-large), em );
 		}
 	}
 }
@@ -94,8 +94,8 @@
 
 .jp-button-previous,
 .jp-button-next {
-	margin-top: unit( -20 / @font-size-base, em );
-	margin-left: unit( -20 / @font-size-base, em );
+	margin-top: unit( (-20 / @font-size-base), em );
+	margin-left: unit( (-20 / @font-size-base), em );
 
 	button:before {
 		font-size: 21px;

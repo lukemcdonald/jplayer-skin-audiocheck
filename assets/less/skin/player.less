@@ -7,10 +7,10 @@
 	border: 1px solid @border-color;
 	color: @text-color;
 	font-size: @font-size-base-rem;
-	margin: 0 auto unit( 60 / @font-size-base, em );
+	margin: 0 auto unit( (60 / @font-size-base), em );
 	position: relative;
 	transition: left @transition-duration ease-in-out;
-	width: unit( @player-width / @font-size-base, em );
+	width: unit( (@player-width / @font-size-base), em );
 }
 
 .jp-jplayer {
@@ -24,7 +24,7 @@
 }
 
 .jp-no-solution {
-	padding: unit( 13 / @font-size-base, em ) unit( 20 / @font-size-base, em );
+	padding: unit( (13 / @font-size-base), em ) unit( (20 / @font-size-base), em );
 }
 
 
@@ -32,7 +32,7 @@
 
 .track-info {
 	background-color: @player-background-color;
-	padding: 100% unit( 20 / @font-size-base, em ) unit( 13 / @font-size-base, em );
+	padding: 100% unit( (20 / @font-size-base), em ) unit( (13 / @font-size-base), em );
 }
 
 .track-poster {
@@ -55,7 +55,7 @@
 
 .track-title {
 	color: @headings-color;
-	margin-top: unit( 13 / @font-size-base, em );
+	margin-top: unit( (13 / @font-size-base), em );
 }
 
 .track-artist,
