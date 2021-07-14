@@ -243,7 +243,6 @@ pre {
   border-width: 0 0 0 10px;
   border-radius: 4px;
   font-family: "Menlo", "Monaco", "Consolas", "Courier New", monospace;
-  font-size: 19px;
   font-size: 1.2rem;
   -webkit-hyphens: none;
   -moz-hyphens: none;
@@ -324,7 +323,6 @@ input[type="submit"],
   color: #919499;
   cursor: pointer;
   display: inline-block;
-  font-size: 19px;
   font-size: 1.2rem;
   letter-spacing: 0.1em;
   margin: 0;
@@ -430,14 +428,12 @@ input[type="submit"].selected,
 }
 .demo-header h2 {
   color: rgba(0, 0, 0, 0.42);
-  font-size: 33px;
   font-size: 2.1rem;
   font-weight: 400;
   margin-bottom: 0.95238095em;
 }
 .demo-header h3 {
   margin-bottom: 0.71428571em;
-  font-size: 22px;
   font-size: 1.4rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -450,7 +446,6 @@ input[type="submit"].selected,
 }
 .credits {
   color: rgba(0, 0, 0, 0.42);
-  font-size: 19px;
   font-size: 1.2rem;
   text-align: center;
 }
@@ -469,7 +464,6 @@ input[type="submit"].selected,
 .audio-player {
   border: 1px solid #d4d5d6;
   color: #5c5f66;
-  font-size: 22px;
   font-size: 1.4rem;
   margin: 0 auto 4.28571429em;
   position: relative;
@@ -515,7 +509,6 @@ input[type="submit"].selected,
 }
 .track-artist,
 .track-record {
-  font-size: 19px;
   font-size: 1.2rem;
   line-height: 1.75;
 }
@@ -566,7 +559,6 @@ input[type="submit"].selected,
   width: 3.33333333em;
 }
 .jp-button button:before {
-  font-size: 33px;
   font-size: 2.1rem;
   line-height: 1.85714286;
   position: absolute;
@@ -587,14 +579,12 @@ input[type="submit"].selected,
   margin-left: -1.78571429em;
 }
 .jp-button-play button {
-  font-size: 22px;
   font-size: 1.4rem;
   height: 3.57142857em;
   width: 3.57142857em;
 }
 .jp-button-play button:before {
   content: "\f152";
-  font-size: 38px;
   font-size: 2.4rem;
   line-height: 1.91666667;
   text-indent: 0.16666667em;
@@ -636,7 +626,6 @@ input[type="submit"].selected,
   background-color: #ffffff;
   border: solid #d4d5d6;
   border-width: 1px 0 0 0;
-  font-size: 19px;
   font-size: 1.2rem;
 }
 .jp-playlist ul {
@@ -676,7 +665,6 @@ input[type="submit"].selected,
   display: none;
 }
 .jp-playlist-item-remove {
-  display: inline-block;
   float: right;
 }
 /* Playlist: Bottom */
@@ -755,4 +743,3 @@ input[type="submit"].selected,
   margin-top: -1px;
   opacity: .8;
 }
-
