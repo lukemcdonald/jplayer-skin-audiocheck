@@ -1,0 +1,15 @@
+.jp-time-rail {
+  @apply absolute bottom-0 left-0 right-0 z-30 bg-white bg-opacity-20;
+
+  .jp-progress {
+    @apply w-full h-2;
+  }
+
+  .jp-seek-bar {
+    @apply hover:cursor-pointer;
+  }
+
+  .jp-play-bar {
+    @apply h-2 bg-primary-600 bg-opacity-90;
+  }
+}

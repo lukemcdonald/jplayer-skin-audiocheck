@@ -1,34 +1,44 @@
 {
-  "author": {
-    "name": "Luke McDonald",
-    "url": "https://lukemcdonald.com/"
-  },
-  "bugs": {
-    "url": "https://github.com/lukemcdonald/jplayer-skin-premium-pixels/issues"
-  },
-  "description": "Premium Pixels jPlayer Skin",
-  "devDependencies": {
-    "autoprefixer": "^10.3.7",
-    "grunt": "~1.4.1",
-    "grunt-contrib-concat": "~2.0.0",
-    "grunt-contrib-jshint": "~3.1.1",
-    "grunt-contrib-less": "^3.0.0",
-    "grunt-contrib-watch": "^1.1.0",
-    "grunt-postcss": "^0.9.0"
-  },
-  "homepage": "https://github.com/lukemcdonald/jplayer-skin-premium-pixels/issues",
-  "keywords": [
-    "jquery-plugin",
-    "audio",
-    "media",
-    "player",
-    "jplayer"
-  ],
-  "license": "MIT",
-  "name": "jplayer-premium-pixels",
+  "name": "jplayer-audiocheck",
+  "version": "1.0.0",
+  "description": "jPlayer Skin",
   "repository": {
     "type": "git",
-    "url": "https://github.com/lukemcdonald/jplayer-skin-premium-pixels.git"
+    "url": "https://github.com/lukemcdonald/jplayer-skin-audiocheck.git"
   },
-  "version": "1.0.0"
+  "keywords": [],
+  "author": "Kent C. Dodds (https://lukemcdonald.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lukemcdonald/jplayer-skin-audiocheck/issues"
+  },
+  "homepage": "https://github.com/lukemcdonald/jplayer-skin-audiocheck/#readme",
+  "scripts": {
+    "build:css:prod": "npm run build:css -- --env production",
+    "build:css": "postcss styles/styles.css --output src/assets/css/styles.css",
+    "build": "npm run build:css:prod && NODE_ENV=production",
+    "css:watch": "TAILWIND_MODE=watch npm run build:css -- --w",
+    "dev": "npm run css:watch",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "dependencies": {
+    "@tailwindcss/typography": "^0.4.1",
+    "postcss-import": "^14.0.2",
+    "tailwindcss": "^2.2.17"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.3.7",
+    "eslint": "^8.0.1",
+    "eslint-config-kentcdodds": "^19.2.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "postcss": "^8.3.9",
+    "postcss-cli": "^9.0.1",
+    "prettier": "^2.4.1"
+  },
+  "eslintIgnore": [
+    "node_modules",
+    "build",
+    "public"
+  ]
 }

@@ -1,0 +1,55 @@
+@layer components {
+  .jp-controls-wrap {
+    @apply absolute absolute top-0 left-0 right-0 h-56
+  }
+
+  .jp-controls {
+    @apply absolute inset-0 flex items-center justify-center;
+    @apply text-white transition-opacity bg-gray-900 opacity-0 bg-opacity-80;
+    @apply group-hover:opacity-100;
+  }
+
+  .jp-button {
+    button {
+      @apply flex items-center justify-center w-10 h-10 m-1.5 text-white transition-colors rounded-full ring-2 ring-current hover:text-primary-600;
+    }
+
+    svg {
+      @apply w-6 h-6;
+    }
+
+    span {
+      @apply sr-only
+    }
+  }
+}
+
+.jp-button-play {
+  button {
+    @apply w-14 h-14 ring-inset
+  }
+
+  svg {
+    @apply w-full h-full;
+  }
+
+  .svg-pause {
+    @apply hidden
+  }
+}
+
+.jp-state-playing {
+	.jp-button-play {
+		.svg-play {
+      @apply hidden;
+    }
+
+    .svg-pause {
+      @apply block
+    }
+	}
+}
+
+.jp-button-playlist {
+  @apply hidden;
+}

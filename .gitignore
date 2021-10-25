@@ -1,3 +1,14 @@
+.vscode/
 .DS_Store
-node_modules
-npm-debug.log
+node_modules/
+
+/.cache
+/build
+/public
+
+*.log
+
+package-lock.json
+yarn.lock
+
+.env*

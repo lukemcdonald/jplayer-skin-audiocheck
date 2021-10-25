@@ -1,0 +1,23 @@
+@layer components {
+  .track-poster {
+    @apply bg-gray-900;
+  }
+
+  .track-title,
+  .track-artist,
+  .track-record {
+    @apply px-5 truncate;
+  }
+
+  .track-title {
+    @apply mt-3 text-sm font-bold text-gray-900;
+  }
+
+  .track-artist {
+    @apply mt-px text-xs font-bold;
+  }
+
+  .track-record {
+    @apply mt-px mb-3 text-xs;
+  }
+}

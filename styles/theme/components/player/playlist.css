@@ -1,0 +1,27 @@
+div.jp-playlist {
+  @apply text-xs bg-white border-t border-gray-300;
+
+  li {
+    @apply border-b border-gray-300 last:border-0;
+  }
+
+  a {
+    @apply block px-5 py-3 hover:bg-gray-100;
+  }
+}
+
+.jp-playlist-item {
+  @apply truncate;
+}
+
+.jp-state-playing {
+  .jp-playlist-current {
+    @apply text-gray-900 bg-gray-100;
+  }
+}
+
+.jp-artist,
+.jp-free-media,
+.jp-playlist-item-remove {
+  @apply hidden;
+}
