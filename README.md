@@ -1,6 +1,6 @@
 # Audiocheck jPlayer Skin
 
-A responsive HTML5 jPlayer skin with playlist. [View Demo](https://lukemcdonald.github.io/jplayer-skin-audiocheck/)
+A responsive HTML5 jPlayer skin with playlist. [View Demo](https://lukemcdonald.github.io/jplayer-skin-audiocheck/src/)
 
 __Contributors:__ [Luke McDonald](https://lukemcdonald.com)
 __Requires:__ [jPlayer](http://jplayer.org)
