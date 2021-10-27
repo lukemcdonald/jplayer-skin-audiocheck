@@ -1437,7 +1437,9 @@ body {
 	margin-top: 1px;
 	font-size: 0.75rem;
 	line-height: 1rem;
-	font-weight: 700;
+	font-weight: 500;
+	--tw-text-opacity: 1;
+	color: rgba(24, 24, 27, var(--tw-text-opacity));
 }
 
 .track-record {

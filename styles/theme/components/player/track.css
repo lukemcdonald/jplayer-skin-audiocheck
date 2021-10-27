@@ -14,7 +14,7 @@
   }
 
   .track-artist {
-    @apply mt-px text-xs font-bold;
+    @apply mt-px text-xs font-medium text-gray-900;
   }
 
   .track-record {
