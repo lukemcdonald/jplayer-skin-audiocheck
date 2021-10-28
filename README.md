@@ -4,11 +4,6 @@ A responsive HTML5 jPlayer skin with playlist. [View Demo](https://lukemcdonald.
 
 ![Audiocheck jPlayer Skin](screenshot-1.jpg)
 
-## Licenses
-
-[jPlayer](http://jplayer.org) is licensed under the MIT.
-Source: https://opensource.org/licenses/MIT
-
 ## Local Development
 
 - Clone repository.

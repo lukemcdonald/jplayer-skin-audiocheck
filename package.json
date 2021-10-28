@@ -8,7 +8,7 @@
   },
   "keywords": [],
   "author": "Luke McDonald (https://lukemcdonald.com/)",
-  "license": "GPL-3.0-only",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/lukemcdonald/jplayer-skin-audiocheck/issues"
   },
@@ -18,7 +18,8 @@
     "build:css": "postcss styles/styles.css --output src/assets/css/styles.css",
     "build": "npm run build:css:prod && NODE_ENV=production",
     "css:watch": "TAILWIND_MODE=watch npm run build:css -- --w",
-    "dev": "npm run css:watch",
+    "develop": "npm run css:watch",
+    "start": "npm run develop",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },
