@@ -1,15 +1,18 @@
-div.jp-playlist {
-  @apply text-xs bg-white border-t border-gray-300;
+@layer components {
+  div.jp-playlist {
+    @apply text-xs bg-white border-t border-gray-300;
 
-  li {
-    @apply border-b border-gray-300 last:border-0;
-  }
+    li {
+      @apply border-b border-gray-300 last:border-0;
+    }
 
-  a {
-    @apply block px-5 py-3 hover:bg-gray-100;
+    a {
+      @apply block px-5 py-3 hover:bg-gray-100;
+    }
   }
 }
 
+/* The following styles cannot be placed within the @layer Component otherwise the styles will not get output. I think this may have something to do with Tailwind's JIT engine and the elements not being on the page initially. */
 .jp-playlist-item {
   @apply truncate;
 }
