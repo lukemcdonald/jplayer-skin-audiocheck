@@ -5,12 +5,10 @@ module.exports = {
     enabled: process.env.NODE_ENV === 'production',
     content: ['./src/**/*.+(html|js)'],
   },
-  // the NODE_ENV thing is for https://github.com/Acidic9/prettier-plugin-tailwind/issues/29
   mode: process.env.NODE_ENV ? 'jit' : undefined,
   darkMode: false, // or 'media' or 'class'
   theme: {
     colors: {
-      // color scheme is defined in /app.css
       transparent: 'transparent',
       current: 'currentColor',
       black: '#000000',
@@ -21,7 +19,10 @@ module.exports = {
     extend: {},
   },
   variants: {
-    extend: {},
+    extend: {
+      borderWidth: ['last'],
+      cursor: ['hover'],
+    },
   },
   plugins: [require('@tailwindcss/typography')],
 }
