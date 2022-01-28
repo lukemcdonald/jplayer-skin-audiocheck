@@ -6,7 +6,7 @@
   .track-title,
   .track-artist,
   .track-record {
-    @apply px-5 truncate;
+    @apply truncate px-5;
   }
 
   .track-title {

@@ -14,28 +14,26 @@
   },
   "homepage": "https://github.com/lukemcdonald/jplayer-skin-audiocheck/#readme",
   "scripts": {
-    "build:css:prod": "npm run build:css -- --env production",
-    "build:css": "postcss styles/styles.css --output src/assets/css/styles.css",
-    "build": "npm run build:css:prod && NODE_ENV=production",
-    "css:watch": "TAILWIND_MODE=watch npm run build:css -- --w",
-    "develop": "npm run css:watch",
-    "start": "npm run develop",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "build": "npm run build:css",
+    "build:css": "postcss styles/styles.css -o src/assets/css/styles.css",
+    "dev": "npm run dev:css",
+    "dev:css": "postcss styles/styles.css -o src/assets/css/styles.css --watch",
+    "start": "npm run dev"
   },
   "dependencies": {
-    "@tailwindcss/typography": "^0.4.1",
+    "@tailwindcss/typography": "^0.5.1",
     "postcss-import": "^14.0.2",
-    "tailwindcss": "^2.2.17"
+    "tailwindcss": "^3.0.18"
   },
   "devDependencies": {
-    "autoprefixer": "^10.3.7",
-    "eslint": "^8.0.1",
-    "eslint-config-kentcdodds": "^19.2.0",
+    "autoprefixer": "^10.4.2",
+    "eslint": "^8.7.0",
+    "eslint-config-kentcdodds": "^20.0.1",
     "eslint-plugin-prettier": "^4.0.0",
-    "postcss": "^8.3.9",
-    "postcss-cli": "^9.0.1",
-    "prettier": "^2.4.1"
+    "postcss": "^8.4.5",
+    "postcss-cli": "^9.1.0",
+    "prettier": "^2.5.1",
+    "prettier-plugin-tailwind": "^2.2.12"
   },
   "eslintIgnore": [
     "node_modules",

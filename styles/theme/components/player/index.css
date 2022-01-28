@@ -1,6 +1,6 @@
 @layer components {
   .audio-player {
-    @apply relative w-56 m-auto mt-12 text-gray-600 transition-all bg-white ring-1 ring-gray-300;
+    @apply relative m-auto mt-12 w-56 bg-white text-gray-600 ring-1 ring-gray-300 transition-all;
   }
 
   .jp-audio,
