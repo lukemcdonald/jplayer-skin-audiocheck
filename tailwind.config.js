@@ -1,12 +1,7 @@
 const colors = require('tailwindcss/colors')
 
 module.exports = {
-  purge: {
-    enabled: process.env.NODE_ENV === 'production',
-    content: ['./src/**/*.+(html|js)'],
-  },
-  mode: process.env.NODE_ENV ? 'jit' : undefined,
-  darkMode: false, // or 'media' or 'class'
+  content: ['./src/**/*.+(html|js)'],
   theme: {
     colors: {
       transparent: 'transparent',
@@ -17,12 +12,6 @@ module.exports = {
       primary: colors.red,
     },
     extend: {},
-  },
-  variants: {
-    extend: {
-      borderWidth: ['last'],
-      cursor: ['hover'],
-    },
   },
   plugins: [require('@tailwindcss/typography')],
 }

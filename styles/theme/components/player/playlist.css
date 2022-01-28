@@ -1,6 +1,6 @@
 @layer components {
   div.jp-playlist {
-    @apply text-xs bg-white border-t border-gray-300;
+    @apply border-t border-gray-300 bg-white text-xs;
 
     li {
       @apply border-b border-gray-300 last:border-0;
@@ -19,7 +19,7 @@
 
 .jp-state-playing {
   .jp-playlist-current {
-    @apply text-gray-900 bg-gray-100;
+    @apply bg-gray-100 text-gray-900;
   }
 }
 

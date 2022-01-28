@@ -3,29 +3,26 @@
  * -----------------------------------------------------------------------------
  */
 
-@import "tailwindcss/base";
-@import "theme/base";
-
+@import 'tailwindcss/base';
+@import 'theme/base';
 
 /**
  * Components
  * -----------------------------------------------------------------------------
  */
 
-@import "tailwindcss/components";
-@import "theme/components/button";
-@import "theme/components/player";
-@import "theme/components/player/controls";
-@import "theme/components/player/playlist";
-@import "theme/components/player/playlist-display";
-@import "theme/components/player/progress-bar";
-@import "theme/components/player/track";
-
+@import 'tailwindcss/components';
+@import 'theme/components/button';
+@import 'theme/components/player';
+@import 'theme/components/player/controls';
+@import 'theme/components/player/playlist';
+@import 'theme/components/player/playlist-display';
+@import 'theme/components/player/progress-bar';
+@import 'theme/components/player/track';
 
 /**
  * Utilites
  * -----------------------------------------------------------------------------
  */
 
-@import "tailwindcss/utilities";
-@import "theme/utilities";
+@import 'tailwindcss/utilities';
