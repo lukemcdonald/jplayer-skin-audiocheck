@@ -1,6 +1,6 @@
 @layer components {
   .jp-controls-wrap {
-    @apply absolute absolute top-0 left-0 right-0 h-56;
+    @apply absolute top-0 left-0 right-0 h-56;
   }
 
   .jp-controls {
