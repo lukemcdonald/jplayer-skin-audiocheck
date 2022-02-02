@@ -9,7 +9,7 @@ const app = {
     const jpAudio = document.querySelector('.jp-audio')
 
     function toggleOpen(event) {
-      const current = Array.from(toggles).find(toggle => toggle.classList.contains('selected'))
+      const current = Array.from(toggles).find((toggle) => toggle.classList.contains('selected'))
       const selected = event.target
 
       // Set audio player scroll back to top to ensure playlist is visible.
@@ -24,7 +24,7 @@ const app = {
       player.classList.add(`playlist-${selected.getAttribute('data-display')}`)
     }
 
-    Array.from(toggles).forEach(toggle => toggle.addEventListener('click', toggleOpen, false))
+    Array.from(toggles).forEach((toggle) => toggle.addEventListener('click', toggleOpen, false))
   },
 }
 

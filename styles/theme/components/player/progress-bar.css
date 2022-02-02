@@ -10,6 +10,6 @@
   }
 
   .jp-play-bar {
-    @apply bg-primary-600 h-2 bg-opacity-90;
+    @apply h-2 bg-primary-600 bg-opacity-90;
   }
 }

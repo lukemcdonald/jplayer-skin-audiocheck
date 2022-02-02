@@ -11,7 +11,7 @@
 
   .jp-button {
     button {
-      @apply hover:text-primary-600 m-1.5 flex h-10 w-10 items-center justify-center rounded-full text-white ring-2 ring-current transition-colors;
+      @apply m-1.5 flex h-10 w-10 items-center justify-center rounded-full text-white ring-2 ring-current transition-colors hover:text-primary-600;
     }
 
     svg {
