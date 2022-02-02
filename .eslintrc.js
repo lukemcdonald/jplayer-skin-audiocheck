@@ -1,26 +1,16 @@
+// eslint-disable-next-line no-undef
 module.exports = {
-  extends: ['kentcdodds', 'prettier'],
+  env: {
+    browser: true,
+    es2021: true,
+  },
+  extends: [`plugin:prettier/recommended`],
   plugins: ['prettier'],
+  parserOptions: {
+    ecmaVersion: 12,
+    sourceType: 'module',
+  },
   rules: {
-    'no-console': 'off',
-
-    // meh...
-    '@babel/new-cap': 'off',
-
-    // this one isn't smart enough for our "~/" imports
-    'import/order': 'off',
-
-    // Options: https://prettier.io/docs/en/options.html
-    'prettier/prettier': [
-      'error',
-      {
-        arrowParens: 'avoid',
-        printWidth: 120,
-        semi: false,
-        singleQuote: true,
-        trailingComma: 'all',
-        tabWidth: 2,
-      },
-    ],
+    'prettier/prettier': 'error',
   },
 }
