@@ -2,60 +2,39 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Audiocheck jPlayer Skin</title>
-
-    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="/assets/css/styles.css" />
   </head>
 
   <body class="bg-gray-100">
     <div class="m-auto max-w-lg px-5 py-12">
       <header class="mb-12 text-center">
         <h1 class="text-3xl font-bold">
-          <a href="https://github.com/lukemcdonald/jplayer-skin-audiocheck/"
-            >Audiocheck</a
-          >
+          <a href="https://github.com/lukemcdonald/jplayer-skin-audiocheck/">Audiocheck</a>
         </h1>
 
         <h2 class="text-xl font-medium text-gray-600">
           <a href="https://github.com/jplayer/jPlayer">jPlayer Skin</a>
         </h2>
 
-        <div class="prose-sm prose mt-6">
+        <div class="prose prose-sm mt-6">
           <p>
             Inspired by the
             <a href="https://audiotheme.com">AudioTheme</a> website and the
-            <a
-              href="https://wordpress.com/blog/2012/07/12/new-theme-soundcheck/"
-              >Soundcheck</a
-            >
+            <a href="https://wordpress.com/blog/2012/07/12/new-theme-soundcheck/">Soundcheck</a>
             WordPress theme's custom audio player.
           </p>
         </div>
 
         <div class="mt-6">
-          <h3 class="text-sm font-bold uppercase tracking-wider">
-            Playlist Display
-          </h3>
+          <h3 class="text-sm font-bold uppercase tracking-wider">Playlist Display</h3>
 
           <div class="playlist-toggles mt-3 flex justify-center space-x-2">
-            <button
-              class="button jp-next selected"
-              role="button"
-              data-display="hide"
-            >
-              Hide
-            </button>
-            <button class="button jp-next" role="button" data-display="bottom">
-              Bottom
-            </button>
-            <button class="button jp-next" role="button" data-display="scroll">
-              Scroll
-            </button>
-            <button class="button jp-next" role="button" data-display="side">
-              Side
-            </button>
+            <button class="button jp-next selected" role="button" data-display="hide">Hide</button>
+            <button class="button jp-next" role="button" data-display="bottom">Bottom</button>
+            <button class="button jp-next" role="button" data-display="scroll">Scroll</button>
+            <button class="button jp-next" role="button" data-display="side">Side</button>
           </div>
         </div>
       </header>
@@ -63,23 +42,14 @@
       <div class="audio-player playlist-hide">
         <div id="jplayer-1" class="jp-jplayer h-0 w-0"></div>
 
-        <div
-          id="jplayer-container-1"
-          class="jp-audio"
-          role="application"
-          aria-label="media player"
-        >
+        <div id="jplayer-container-1" class="jp-audio" role="application" aria-label="media player">
           <div class="jp-interface group">
             <div class="jp-controls-wrap">
               <div class="jp-controls">
                 <div class="jp-button jp-button-previous">
                   <button class="jp-previous" role="button" tabindex="0">
                     <span>Previous</span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                       <path
                         d="M8.445 14.832A1 1 0 0010 14v-2.798l5.445 3.63A1 1 0 0017 14V6a1 1 0 00-1.555-.832L10 8.798V6a1 1 0 00-1.555-.832l-6 4a1 1 0 000 1.664l6 4z"
                       />
@@ -89,11 +59,7 @@
                 <div class="jp-button jp-button-play">
                   <button class="jp-play" role="button" tabindex="0">
                     <span>Play/Pause</span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="svg-play"
-                      viewBox="0 0 24 24"
-                    >
+                    <svg xmlns="http://www.w3.org/2000/svg" class="svg-play" viewBox="0 0 24 24">
                       <path
                         fill="currentColor"
                         d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
@@ -106,23 +72,14 @@
                       viewBox="0 0 24 24"
                       stroke="currentColor"
                     >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M10 9v6m4-6v6m7-3a9"
-                      />
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 9v6m4-6v6m7-3a9" />
                     </svg>
                   </button>
                 </div>
                 <div class="jp-button jp-button-next">
                   <button class="jp-next" role="button" tabindex="0">
                     <span>Next</span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                       <path
                         d="M4.555 5.168A1 1 0 003 6v8a1 1 0 001.555.832L10 11.202V14a1 1 0 001.555.832l6-4a1 1 0 000-1.664l-6-4A1 1 0 0010 6v2.798l-5.445-3.63z"
                       />
@@ -130,9 +87,7 @@
                   </button>
                 </div>
                 <div class="jp-button jp-button-playlist">
-                  <button class="jp-playlist" role="button" tabindex="0">
-                    playlist toggle
-                  </button>
+                  <button class="jp-playlist" role="button" tabindex="0">playlist toggle</button>
                 </div>
               </div>
               <div class="jp-time-rail">
@@ -163,11 +118,8 @@
           <div class="jp-no-solution fade-in">
             <div><strong>Update Required</strong></div>
             <p>
-              To play the media you will need to either update your browser to a
-              recent version or update your
-              <a href="https://get.adobe.com/flashplayer/" target="_blank"
-                >Flash plugin</a
-              >.
+              To play the media you will need to either update your browser to a recent version or update your
+              <a href="https://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
             </p>
           </div>
         </div>
@@ -175,26 +127,15 @@
       </div>
       <!-- .demo-player -->
 
-      <footer class="prose-sm prose mt-12 text-center text-gray-600">
+      <footer class="prose prose-sm mt-12 text-center text-gray-600">
+        <p>Created by <a href="https://lukemcdonald.com/">Luke McDonald</a>.</p>
         <p>
-          <span class="block"
-            >Created by
-            <a href="https://lukemcdonald.com/">Luke McDonald</a>.</span
-          >
-          <span
-            ><a
-              href="https://github.com/lukemcdonald/jplayer-skin-audiocheck/releases/"
-              >Download Skin</a
-            ></span
-          >
+          <a href="https://github.com/lukemcdonald/jplayer-skin-audiocheck/releases/">Download Skin</a>
         </p>
       </footer>
     </div>
 
-    <script
-      type="text/javascript"
-      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-    ></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script
       type="text/javascript"
       src="https://cdnjs.cloudflare.com/ajax/libs/jplayer/2.9.2/jplayer/jquery.jplayer.min.js"
@@ -203,7 +144,7 @@
       type="text/javascript"
       src="https://cdnjs.cloudflare.com/ajax/libs/jplayer/2.9.2/add-on/jplayer.playlist.min.js"
     ></script>
-    <script type="module" src="assets/js/app.js"></script>
-    <script type="module" src="assets/js/jplayer.js"></script>
+    <script type="module" src="/assets/js/app.js"></script>
+    <script type="module" src="/assets/js/jplayer.js"></script>
   </body>
 </html>

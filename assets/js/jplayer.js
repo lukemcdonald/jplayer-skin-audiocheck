@@ -25,7 +25,7 @@ jQuery.extend(demo, {
         ready: () => demo.setupCurrentTrack(),
         play: () => demo.setupCurrentTrack(),
         ended: () => demo.setupCurrentTrack(),
-      },
+      }
     )
   },
 
