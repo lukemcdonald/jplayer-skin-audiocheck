@@ -3,7 +3,7 @@
   "name": "jplayer-audiocheck",
   "description": "jPlayer Skin",
   "author": "Luke McDonald (https://lukemcdonald.com/)",
-  "homepage": "https://github.com/lukemcdonald/jplayer-skin-audiocheck/#readme",
+  "homepage": "https://github.com/lukemcdonald/jplayer-skin-audiocheck/",
   "keywords": [],
   "license": "MIT",
   "repository": {
@@ -40,5 +40,4 @@
     "tailwindcss": "^3.0.15",
     "vite": "^2.7.2"
   }
-
 }
