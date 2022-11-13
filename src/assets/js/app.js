@@ -1,6 +1,8 @@
 const app = {
   init: () => {
-    document.body.classList.add('ontouchstart' in window || 'onmsgesturechange' in window ? 'touch' : 'no-touch')
+    document.body.classList.add(
+      'ontouchstart' in window || 'onmsgesturechange' in window ? 'touch' : 'no-touch'
+    )
   },
 
   setupPlaylistDisplay: () => {
