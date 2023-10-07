@@ -25,7 +25,7 @@ jQuery.extend(demo, {
         ready: () => demo.setupCurrentTrack(),
         play: () => demo.setupCurrentTrack(),
         ended: () => demo.setupCurrentTrack(),
-      }
+      },
     )
   },
 
@@ -34,15 +34,16 @@ jQuery.extend(demo, {
    */
   setupCurrentTrack: () => {
     const current = jPlaylist.playlist[jPlaylist.current]
-    const poster = document.querySelector('.track-poster img')
-    const title = document.querySelector('.track-title')
-    const artist = document.querySelector('.track-artist')
-    const record = document.querySelector('.track-record')
 
-    poster.setAttribute('src', current.poster)
-    title.textContent = current.title
+    const artist = document.querySelector('.track-artist')
+    const poster = document.querySelector('.track-poster img')
+    const record = document.querySelector('.track-record')
+    const title = document.querySelector('.track-title')
+
     artist.textContent = current.artist
+    poster.setAttribute('src', current.poster)
     record.textContent = current.record
+    title.textContent = current.title
   },
 })
 
