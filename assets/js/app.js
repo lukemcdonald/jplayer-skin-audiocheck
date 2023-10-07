@@ -1,7 +1,7 @@
 const app = {
   init: () => {
     document.body.classList.add(
-      'ontouchstart' in window || 'onmsgesturechange' in window ? 'touch' : 'no-touch'
+      'ontouchstart' in window || 'onmsgesturechange' in window ? 'touch' : 'no-touch',
     )
   },
 
