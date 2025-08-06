@@ -1,9 +1,0 @@
-@layer components {
-  .button {
-    @apply inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium leading-4 text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary-600 focus:ring-offset-2;
-  }
-
-  .button.selected {
-    @apply outline-none ring-2 ring-gray-600 ring-offset-2;
-  }
-}

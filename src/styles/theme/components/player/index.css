@@ -1,0 +1,15 @@
+.audio-player {
+  @apply relative m-auto mt-12 w-56 bg-white text-gray-600 ring-1 ring-gray-300 transition-all;
+}
+
+.jp-audio {
+  @apply relative overflow-hidden;
+}
+
+.jp-interface {
+  @apply relative overflow-hidden;
+}
+
+.jp-no-solution {
+  @apply px-5 py-3;
+}
