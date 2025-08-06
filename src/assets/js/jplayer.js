@@ -1,5 +1,6 @@
 /*global jQuery:false jPlayerPlaylist:false */
 import playlist from './playlist.js'
+import swfFile from '../media/jquery.jplayer.swf?url'
 
 const demo = window.demo || {}
 let jPlaylist
@@ -16,7 +17,7 @@ jQuery.extend(demo, {
       },
       playlist,
       {
-        swfPath: 'assets/media',
+        swfPath: swfFile.replace(/\/[^\/]*$/, ''),
         supplied: 'oga, mp3',
         wmode: 'window',
         useStateClassSkin: true,
