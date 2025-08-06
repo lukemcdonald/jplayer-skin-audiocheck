@@ -1,7 +1,7 @@
-import posterAudiotheme from '../media/poster-audiotheme.jpg'
-import posterStarkPalace from '../media/poster-stark-palace.jpg'
+import posterAudiotheme from '../media/poster-audiotheme.jpg';
+import posterStarkPalace from '../media/poster-stark-palace.jpg';
 
-export default [
+const playlist = [
   {
     title: 'Bubble',
     artist: 'Miaow',
@@ -9,7 +9,7 @@ export default [
     free: true,
     mp3: 'https://www.jplayer.org/audio/mp3/Miaow-07-Bubble.mp3',
     oga: 'https://www.jplayer.org/audio/ogg/Miaow-07-Bubble.ogg',
-    poster: posterAudiotheme,
+    poster: posterAudiotheme
   },
   {
     title: 'Cro Magnon Man',
@@ -17,7 +17,7 @@ export default [
     record: 'Record Name',
     mp3: 'https://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3',
     oga: 'https://www.jplayer.org/audio/ogg/TSP-01-Cro_magnon_man.ogg',
-    poster: posterStarkPalace,
+    poster: posterStarkPalace
   },
   {
     title: 'Tempered Song',
@@ -25,7 +25,7 @@ export default [
     record: 'Record Name',
     mp3: 'https://www.jplayer.org/audio/mp3/Miaow-01-Tempered-song.mp3',
     oga: 'https://www.jplayer.org/audio/ogg/Miaow-01-Tempered-song.ogg',
-    poster: posterAudiotheme,
+    poster: posterAudiotheme
   },
   {
     title: 'Your Face',
@@ -33,7 +33,7 @@ export default [
     record: 'Record Name',
     mp3: 'https://www.jplayer.org/audio/mp3/TSP-05-Your_face.mp3',
     oga: 'https://www.jplayer.org/audio/ogg/TSP-05-Your_face.ogg',
-    poster: posterStarkPalace,
+    poster: posterStarkPalace
   },
   {
     title: 'Hidden',
@@ -41,7 +41,7 @@ export default [
     record: 'Record Name',
     mp3: 'https://www.jplayer.org/audio/mp3/Miaow-02-Hidden.mp3',
     oga: 'https://www.jplayer.org/audio/ogg/Miaow-02-Hidden.ogg',
-    poster: posterAudiotheme,
+    poster: posterAudiotheme
   },
   {
     title: 'Lentement',
@@ -50,7 +50,7 @@ export default [
     free: true,
     mp3: 'https://www.jplayer.org/audio/mp3/Miaow-03-Lentement.mp3',
     oga: 'https://www.jplayer.org/audio/ogg/Miaow-03-Lentement.ogg',
-    poster: posterAudiotheme,
+    poster: posterAudiotheme
   },
   {
     title: 'Cyber Sonnet',
@@ -58,7 +58,7 @@ export default [
     record: 'Record Name',
     mp3: 'https://www.jplayer.org/audio/mp3/TSP-07-Cybersonnet.mp3',
     oga: 'https://www.jplayer.org/audio/ogg/TSP-07-Cybersonnet.ogg',
-    poster: posterStarkPalace,
+    poster: posterStarkPalace
   },
   {
     title: 'Lismore',
@@ -66,7 +66,7 @@ export default [
     record: 'Record Name',
     mp3: 'https://www.jplayer.org/audio/mp3/Miaow-04-Lismore.mp3',
     oga: 'https://www.jplayer.org/audio/ogg/Miaow-04-Lismore.ogg',
-    poster: posterAudiotheme,
+    poster: posterAudiotheme
   },
   {
     title: 'The Separation',
@@ -74,7 +74,7 @@ export default [
     record: 'Record Name',
     mp3: 'https://www.jplayer.org/audio/mp3/Miaow-05-The-separation.mp3',
     oga: 'https://www.jplayer.org/audio/ogg/Miaow-05-The-separation.ogg',
-    poster: posterAudiotheme,
+    poster: posterAudiotheme
   },
   {
     title: 'Beside Me',
@@ -82,7 +82,7 @@ export default [
     record: 'Record Name',
     mp3: 'https://www.jplayer.org/audio/mp3/Miaow-06-Beside-me.mp3',
     oga: 'https://www.jplayer.org/audio/ogg/Miaow-06-Beside-me.ogg',
-    poster: posterAudiotheme,
+    poster: posterAudiotheme
   },
   {
     title: 'Stirring of a Fool',
@@ -90,7 +90,7 @@ export default [
     record: 'Record Name',
     mp3: 'https://www.jplayer.org/audio/mp3/Miaow-08-Stirring-of-a-fool.mp3',
     oga: 'https://www.jplayer.org/audio/ogg/Miaow-08-Stirring-of-a-fool.ogg',
-    poster: posterAudiotheme,
+    poster: posterAudiotheme
   },
   {
     title: 'Partir',
@@ -99,7 +99,7 @@ export default [
     free: true,
     mp3: 'https://www.jplayer.org/audio/mp3/Miaow-09-Partir.mp3',
     oga: 'https://www.jplayer.org/audio/ogg/Miaow-09-Partir.ogg',
-    poster: posterAudiotheme,
+    poster: posterAudiotheme
   },
   {
     title: 'Thin Ice',
@@ -107,6 +107,26 @@ export default [
     record: 'Record Name',
     mp3: 'https://www.jplayer.org/audio/mp3/Miaow-10-Thin-ice.mp3',
     oga: 'https://www.jplayer.org/audio/ogg/Miaow-10-Thin-ice.ogg',
-    poster: posterAudiotheme,
-  },
-]
+    poster: posterAudiotheme
+  }
+];
+
+function getPlaylistStats () {
+  return {
+    totalTracks: playlist.length,
+    freeTracks: playlist.filter(track => track.free).length,
+    artists: [...new Set(playlist.map(track => track.artist))],
+    records: [...new Set(playlist.map(track => track.record))]
+  };
+}
+
+function getTracksByArtist (artist) {
+  return playlist.filter(track => track.artist === artist);
+}
+
+function getFreeTracks () {
+  return playlist.filter(track => track.free);
+}
+
+export default playlist;
+export { getPlaylistStats, getTracksByArtist, getFreeTracks };

@@ -1,43 +1,88 @@
 
-import posterAudiotheme from '../media/poster-audiotheme.jpg'
+import posterAudiotheme from '../media/poster-audiotheme.jpg';
 
-const app = {
-  init: () => {
-    document.body.classList.add(
-      'ontouchstart' in window || 'onmsgesturechange' in window ? 'touch' : 'no-touch',
-    )
+class AudioPlayerApp {
+  constructor () {
+    this.isInitialized = false;
+    this.elements = {
+      posterImg: null,
+      player: null,
+      toggles: null,
+      jpAudio: null
+    };
+  }
 
-    // Set the initial poster image
-    const posterImg = document.getElementById('track-poster-img')
-    if (posterImg) {
-      posterImg.src = posterAudiotheme
+  init () {
+    this.setupTouchDetection();
+    this.setupElements();
+    this.setInitialPoster();
+    this.setupPlaylistDisplay();
+    this.isInitialized = true;
+  }
+
+  setupTouchDetection () {
+    const isTouchDevice = 'ontouchstart' in window || 'onmsgesturechange' in window;
+    document.body.classList.add(isTouchDevice ? 'touch' : 'no-touch');
+  }
+
+  setupElements () {
+    this.elements = {
+      posterImg: document.getElementById('track-poster-img'),
+      player: document.querySelector('.audio-player'),
+      toggles: document.querySelectorAll('.playlist-toggles button'),
+      jpAudio: document.querySelector('.jp-audio')
+    };
+  }
+
+  setInitialPoster () {
+    if (this.elements.posterImg) {
+      this.elements.posterImg.src = posterAudiotheme;
+      this.elements.posterImg.alt = 'Track poster';
     }
-  },
+  }
 
-  setupPlaylistDisplay: () => {
-    const player = document.querySelector('.audio-player')
-    const toggles = document.querySelectorAll('.playlist-toggles button')
-    const jpAudio = document.querySelector('.jp-audio')
-
-    function toggleOpen(event) {
-      const current = Array.from(toggles).find((toggle) => toggle.classList.contains('selected'))
-      const selected = event.target
-
-      // Set audio player scroll back to top to ensure playlist is visible.
-      jpAudio.scrollTop = 0
-
-      // Update selected item classes.
-      current.classList.remove('selected')
-      selected.classList.add('selected')
-
-      // Update playlist display class.
-      player.classList.remove(`playlist-${current.getAttribute('data-display')}`)
-      player.classList.add(`playlist-${selected.getAttribute('data-display')}`)
+  setupPlaylistDisplay () {
+    if (!this.elements.player || !this.elements.toggles.length || !this.elements.jpAudio) {
+      return;
     }
 
-    Array.from(toggles).forEach((toggle) => toggle.addEventListener('click', toggleOpen, false))
-  },
+    this.elements.toggles.forEach(toggle => {
+      toggle.addEventListener('click', this.handlePlaylistToggle.bind(this), false);
+    });
+  }
+
+  handlePlaylistToggle (event) {
+    const currentToggle = Array.from(this.elements.toggles)
+      .find(toggle => toggle.classList.contains('selected'));
+    const selectedToggle = event.target;
+
+    if (!currentToggle || !selectedToggle) {
+      return;
+    }
+
+    this.elements.jpAudio.scrollTop = 0;
+
+    currentToggle.classList.remove('selected');
+    selectedToggle.classList.add('selected');
+
+    const currentDisplay = currentToggle.getAttribute('data-display');
+    const newDisplay = selectedToggle.getAttribute('data-display');
+
+    this.elements.player.classList.remove(`playlist-${currentDisplay}`);
+    this.elements.player.classList.add(`playlist-${newDisplay}`);
+  }
+
+  getState () {
+    return {
+      isInitialized: this.isInitialized,
+      elements: Object.keys(this.elements).reduce((acc, key) => {
+        acc[key] = this.elements[key] !== null;
+        return acc;
+      }, {})
+    };
+  }
 }
 
-app.init()
-app.setupPlaylistDisplay()
+const app = new AudioPlayerApp();
+
+export default app;

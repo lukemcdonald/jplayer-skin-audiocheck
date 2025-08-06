@@ -1,52 +1,120 @@
-/*global jQuery:false jPlayerPlaylist:false */
-import playlist from './playlist.js'
-import swfFile from '../media/jquery.jplayer.swf?url'
+import playlist from './playlist.js';
+import swfFile from '../media/jquery.jplayer.swf?url';
 
-const demo = window.demo || {}
-let jPlaylist
+class JPlayerManager {
+  constructor () {
+    this.jPlaylist = null;
+    this.isInitialized = false;
+    this.elements = {
+      artist: null,
+      poster: null,
+      record: null,
+      title: null
+    };
+  }
 
-jQuery.extend(demo, {
-  /**
-   * Initialize the jPlayer and playlist.
-   */
-  setupPlayer: () => {
-    jPlaylist = new jPlayerPlaylist(
+  init () {
+    this.setupElements();
+    this.setupPlayer();
+    this.isInitialized = true;
+  }
+
+  setupElements () {
+    this.elements = {
+      artist: document.querySelector('.track-artist'),
+      poster: document.querySelector('.track-poster img'),
+      record: document.querySelector('.track-record'),
+      title: document.querySelector('.track-title')
+    };
+  }
+
+  setupPlayer () {
+    if (typeof jPlayerPlaylist === 'undefined') {
+      return;
+    }
+
+    this.jPlaylist = new jPlayerPlaylist(
       {
         jPlayer: '#jplayer-1',
-        cssSelectorAncestor: '#jplayer-container-1',
+        cssSelectorAncestor: '#jplayer-container-1'
       },
       playlist,
       {
-        swfPath: swfFile.replace(/\/[^\/]*$/, ''),
-        supplied: 'oga, mp3',
-        wmode: 'window',
-        useStateClassSkin: true,
         autoBlur: false,
         keyEnabled: true,
-        ready: () => demo.setupCurrentTrack(),
-        play: () => demo.setupCurrentTrack(),
-        ended: () => demo.setupCurrentTrack(),
-      },
-    )
-  },
+        supplied: 'oga, mp3',
+        swfPath: this.getSwfPath(),
+        useStateClassSkin: true,
+        wmode: 'window',
+        ended: () => this.setupCurrentTrack(),
+        error: (event) => this.handlePlayerError(event),
+        play: () => this.setupCurrentTrack(),
+        ready: () => this.setupCurrentTrack()
+      }
+    );
+  }
 
-  /**
-   * Update current track info when playlist changes.
-   */
-  setupCurrentTrack: () => {
-    const current = jPlaylist.playlist[jPlaylist.current]
+  getSwfPath () {
+    return swfFile.replace(/\/[^/]*$/, '');
+  }
 
-    const artist = document.querySelector('.track-artist')
-    const poster = document.querySelector('.track-poster img')
-    const record = document.querySelector('.track-record')
-    const title = document.querySelector('.track-title')
+  setupCurrentTrack () {
+    if (!this.jPlaylist || !this.jPlaylist.playlist || this.jPlaylist.current === undefined) {
+      return;
+    }
 
-    artist.textContent = current.artist
-    poster.setAttribute('src', current.poster)
-    record.textContent = current.record
-    title.textContent = current.title
-  },
-})
+    const current = this.jPlaylist.playlist[this.jPlaylist.current];
 
-demo.setupPlayer()
-demo.setupCurrentTrack()
+    if (!current) {
+      return;
+    }
+
+    this.updateTrackElements(current);
+  }
+
+  updateTrackElements (track) {
+    const { artist, poster, record, title } = this.elements;
+
+    if (artist && track.artist) {
+      artist.textContent = track.artist;
+    }
+
+    if (poster && track.poster) {
+      poster.setAttribute('src', track.poster);
+      poster.setAttribute('alt', `${track.artist} - ${track.title}`);
+    }
+
+    if (record && track.record) {
+      record.textContent = track.record;
+    }
+
+    if (title && track.title) {
+      title.textContent = track.title;
+    }
+  }
+
+  handlePlayerError () {
+  }
+
+  getPlaylistState () {
+    if (!this.jPlaylist) {
+      return { isInitialized: false };
+    }
+
+    return {
+      isInitialized: this.isInitialized,
+      currentTrack: this.jPlaylist.current,
+      totalTracks: this.jPlaylist.playlist.length,
+      currentTrackData: this.jPlaylist.playlist[this.jPlaylist.current] || null
+    };
+  }
+
+  getJPlaylist () {
+    return this.jPlaylist;
+  }
+}
+
+const jPlayerManager = new JPlayerManager();
+jPlayerManager.init();
+
+export default jPlayerManager;
