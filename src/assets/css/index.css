@@ -32,11 +32,10 @@
   --color-primary-950: #450a0a;
 }
 
-@import './theme/base';
-@import './theme/components/button.css';
-@import './theme/components/player';
-@import './theme/components/player/controls.css';
-@import './theme/components/player/playlist.css';
-@import './theme/components/player/playlist-display.css';
-@import './theme/components/player/progress-bar.css';
-@import './theme/components/player/track.css';
+@import './base.css';
+@import './player/index.css';
+@import './player/controls.css';
+@import './player/playlist.css';
+@import './player/playlist-display.css';
+@import './player/progress-bar.css';
+@import './player/track.css';
