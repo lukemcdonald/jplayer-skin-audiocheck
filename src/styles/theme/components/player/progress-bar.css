@@ -1,5 +1,5 @@
 .jp-time-rail {
-  @apply absolute bottom-0 left-0 right-0 z-30 bg-white bg-opacity-20;
+  @apply absolute bottom-0 left-0 right-0 z-30 bg-white/20;
 
   .jp-progress {
     @apply h-2 w-full;
@@ -10,6 +10,6 @@
   }
 
   .jp-play-bar {
-    @apply h-2 bg-primary-600 bg-opacity-90;
+    @apply h-2 bg-primary-600/90;
   }
 }

@@ -1,5 +1,6 @@
 {
   "version": "2.1.0",
+  "type": "module",
   "name": "jplayer-audiocheck",
   "description": "jPlayer Skin",
   "author": "Luke McDonald (https://lukemcdonald.com/)",
@@ -14,30 +15,22 @@
     "url": "https://github.com/lukemcdonald/jplayer-skin-audiocheck/issues"
   },
   "scripts": {
-    "build": "npm run build:css && vite build",
-    "build:css": "postcss styles/styles.css -o src/assets/css/styles.css",
-    "deploy": "gh-pages -d src",
-    "dev": "concurrently \"npm run dev:css\" \"vite\"",
-    "dev:css": "postcss styles/styles.css -o src/assets/css/styles.css --watch",
-    "format": "prettier --write \"./**/*.{js,jsx,html,md}\"",
+    "build": "vite build",
+    "deploy": "gh-pages -d dist",
+    "dev": "vite",
     "predeploy": "npm run build",
     "preview": "vite preview",
     "start": "npm run dev"
   },
   "dependencies": {
-    "gh-pages": "^6.1.1",
-    "postcss-import": "^16.1.0"
+    "@tailwindcss/vite": "^4.1.11",
+    "gh-pages": "^6.3.0",
+    "tailwindcss": "^4.1.11"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.13",
-    "autoprefixer": "^10.4.20",
-    "concurrently": "^9.2.0",
     "eslint": "^9.8.0",
     "eslint-config-prettier": "^10.1.8",
-    "postcss": "^8.4.40",
-    "postcss-cli": "^11.0.0",
     "prettier": "^3.3.3",
-    "tailwindcss": "^3.4.7",
     "vite": "^7.0.6"
   }
 }
