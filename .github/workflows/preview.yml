@@ -28,9 +28,11 @@ jobs:
 
       - name: Install and Build
         if: github.event.action != 'closed'
+        env:
+          VITE_BASE_PATH: /jplayer-skin-audiocheck/pr-preview/pr-${{ github.event.number }}/
         run: |
           npm install
-          npm run build -- --base /jplayer-skin-audiocheck/pr-preview/pr-${{ github.event.number }}/
+          npm run build
 
       - name: Deploy preview
         uses: rossjrw/pr-preview-action@v1

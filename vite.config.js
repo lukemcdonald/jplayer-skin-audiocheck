@@ -3,7 +3,7 @@ import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
   root: 'src',
-  base: '/jplayer-skin-audiocheck/',
+  base: process.env.VITE_BASE_PATH || '/jplayer-skin-audiocheck/',
   plugins: [
     tailwindcss(),
   ],
