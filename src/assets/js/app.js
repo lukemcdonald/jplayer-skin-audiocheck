@@ -1,10 +1,17 @@
 
+import posterAudiotheme from '../media/poster-audiotheme.jpg'
 
 const app = {
   init: () => {
     document.body.classList.add(
       'ontouchstart' in window || 'onmsgesturechange' in window ? 'touch' : 'no-touch',
     )
+
+    // Set the initial poster image
+    const posterImg = document.getElementById('track-poster-img')
+    if (posterImg) {
+      posterImg.src = posterAudiotheme
+    }
   },
 
   setupPlaylistDisplay: () => {
