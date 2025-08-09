@@ -36,7 +36,7 @@ const playlist = [
   }
 ];
 
-function getPlaylistStats () {
+function getPlaylistStats() {
   return {
     totalTracks: playlist.length,
     freeTracks: playlist.filter(track => track.free).length,
@@ -45,11 +45,11 @@ function getPlaylistStats () {
   };
 }
 
-function getTracksByArtist (artist) {
+function getTracksByArtist(artist) {
   return playlist.filter(track => track.artist === artist);
 }
 
-function getFreeTracks () {
+function getFreeTracks() {
   return playlist.filter(track => track.free);
 }
 
