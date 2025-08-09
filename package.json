@@ -18,12 +18,13 @@
     "build": "vite build",
     "deploy": "gh-pages -d dist",
     "dev": "vite",
+    "format": "prettier --write src/**/*.{js,css,html}",
+    "lint": "eslint src/**/*.js",
+    "lint:fix": "eslint src/**/*.js --fix",
     "predeploy": "npm run build",
     "preview": "vite preview",
     "start": "npm run dev",
-    "lint": "eslint src/**/*.js",
-    "lint:fix": "eslint src/**/*.js --fix",
-    "format": "prettier --write src/**/*.{js,css,html}"
+    "style": "npm run lint:fix && npm run format"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.11",
