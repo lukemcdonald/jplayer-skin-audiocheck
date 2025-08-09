@@ -26,15 +26,14 @@
     "start": "npm run dev",
     "style": "npm run lint:fix && npm run format"
   },
-  "dependencies": {
-    "@tailwindcss/vite": "^4.1.11",
-    "gh-pages": "^6.3.0",
-    "tailwindcss": "^4.1.11"
-  },
+  "dependencies": {},
   "devDependencies": {
+    "@tailwindcss/vite": "^4.1.11",
     "eslint": "^9.32.0",
     "eslint-config-prettier": "^10.1.8",
+    "gh-pages": "^6.3.0",
     "prettier": "^3.6.2",
+    "tailwindcss": "^4.1.11",
     "vite": "^7.0.6"
   }
 }
