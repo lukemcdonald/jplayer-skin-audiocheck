@@ -114,6 +114,5 @@ class JPlayerManager {
 }
 
 const jPlayerManager = new JPlayerManager();
-jPlayerManager.init();
 
 export default jPlayerManager;
