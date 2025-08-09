@@ -2,7 +2,7 @@ import playlist from './playlist.js';
 import swfFile from '../media/jquery.jplayer.swf?url';
 
 class JPlayerManager {
-  constructor () {
+  constructor() {
     this.jPlaylist = null;
     this.isInitialized = false;
     this.elements = {
@@ -13,13 +13,13 @@ class JPlayerManager {
     };
   }
 
-  init () {
+  init() {
     this.setupElements();
     this.setupPlayer();
     this.isInitialized = true;
   }
 
-  setupElements () {
+  setupElements() {
     this.elements = {
       artist: document.querySelector('.track-artist'),
       poster: document.querySelector('.track-poster img'),
@@ -28,7 +28,7 @@ class JPlayerManager {
     };
   }
 
-  setupPlayer () {
+  setupPlayer() {
     if (typeof jPlayerPlaylist === 'undefined') {
       return;
     }
@@ -47,18 +47,18 @@ class JPlayerManager {
         useStateClassSkin: true,
         wmode: 'window',
         ended: () => this.setupCurrentTrack(),
-        error: (event) => this.handlePlayerError(event),
+        error: event => this.handlePlayerError(event),
         play: () => this.setupCurrentTrack(),
         ready: () => this.setupCurrentTrack()
       }
     );
   }
 
-  getSwfPath () {
+  getSwfPath() {
     return swfFile.replace(/\/[^/]*$/, '');
   }
 
-  setupCurrentTrack () {
+  setupCurrentTrack() {
     if (!this.jPlaylist || !this.jPlaylist.playlist || this.jPlaylist.current === undefined) {
       return;
     }
@@ -72,7 +72,7 @@ class JPlayerManager {
     this.updateTrackElements(current);
   }
 
-  updateTrackElements (track) {
+  updateTrackElements(track) {
     const { artist, poster, record, title } = this.elements;
 
     if (artist && track.artist) {
@@ -93,10 +93,9 @@ class JPlayerManager {
     }
   }
 
-  handlePlayerError () {
-  }
+  handlePlayerError() {}
 
-  getPlaylistState () {
+  getPlaylistState() {
     if (!this.jPlaylist) {
       return { isInitialized: false };
     }
@@ -109,7 +108,7 @@ class JPlayerManager {
     };
   }
 
-  getJPlaylist () {
+  getJPlaylist() {
     return this.jPlaylist;
   }
 }

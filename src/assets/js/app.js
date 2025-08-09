@@ -1,8 +1,7 @@
-
 import posterAudiotheme from '../media/poster-audiotheme.jpg';
 
 class AudioPlayerApp {
-  constructor () {
+  constructor() {
     this.isInitialized = false;
     this.elements = {
       posterImg: null,
@@ -12,7 +11,7 @@ class AudioPlayerApp {
     };
   }
 
-  init () {
+  init() {
     this.setupTouchDetection();
     this.setupElements();
     this.setInitialPoster();
@@ -20,12 +19,12 @@ class AudioPlayerApp {
     this.isInitialized = true;
   }
 
-  setupTouchDetection () {
+  setupTouchDetection() {
     const isTouchDevice = 'ontouchstart' in window || 'onmsgesturechange' in window;
     document.body.classList.add(isTouchDevice ? 'touch' : 'no-touch');
   }
 
-  setupElements () {
+  setupElements() {
     this.elements = {
       posterImg: document.getElementById('track-poster-img'),
       player: document.querySelector('.audio-player'),
@@ -34,14 +33,14 @@ class AudioPlayerApp {
     };
   }
 
-  setInitialPoster () {
+  setInitialPoster() {
     if (this.elements.posterImg) {
       this.elements.posterImg.src = posterAudiotheme;
       this.elements.posterImg.alt = 'Track poster';
     }
   }
 
-  setupPlaylistDisplay () {
+  setupPlaylistDisplay() {
     if (!this.elements.player || !this.elements.toggles.length || !this.elements.jpAudio) {
       return;
     }
@@ -51,9 +50,10 @@ class AudioPlayerApp {
     });
   }
 
-  handlePlaylistToggle (event) {
-    const currentToggle = Array.from(this.elements.toggles)
-      .find(toggle => toggle.classList.contains('selected'));
+  handlePlaylistToggle(event) {
+    const currentToggle = Array.from(this.elements.toggles).find(toggle =>
+      toggle.classList.contains('selected')
+    );
     const selectedToggle = event.target;
 
     if (!currentToggle || !selectedToggle) {
@@ -72,7 +72,7 @@ class AudioPlayerApp {
     this.elements.player.classList.add(`playlist-${newDisplay}`);
   }
 
-  getState () {
+  getState() {
     return {
       isInitialized: this.isInitialized,
       elements: Object.keys(this.elements).reduce((acc, key) => {

@@ -2,7 +2,7 @@ import app from './app.js';
 import jPlayerManager from './jplayer.js';
 
 // Initialize modules
-function init () {
+function init() {
   app.init();
   jPlayerManager.init();
 }
