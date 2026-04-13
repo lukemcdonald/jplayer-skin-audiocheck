@@ -47,7 +47,7 @@ class JPlayerManager {
         keyEnabled: true,
         play: () => this.setupCurrentTrack(),
         ready: () => this.setupCurrentTrack(),
-        supplied: "oga, mp3",
+        supplied: "mp3",
         swfPath: JPlayerManager.getSwfPath(),
         useStateClassSkin: true,
         wmode: "window",

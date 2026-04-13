@@ -1,38 +1,39 @@
+import mixkitArcadeBonusAlert from "../media/audio/mixkit-arcade-bonus-alert.mp3?url";
+import mixkitGameRewardSting from "../media/audio/mixkit-game-reward.mp3?url";
+import mixkitSoftInterfacePing from "../media/audio/mixkit-soft-ping.mp3?url";
 import posterAudiotheme from "../media/poster-audiotheme.jpg";
+import trexRoar from "../media/audio/t-rex-roar.mp3?url";
 
+/** Demo tracks use bundled MP3s; www.jplayer.org no longer serves the old Miaow samples. */
 const playlist = [
   {
-    artist: "Miaow",
+    artist: "MDN",
     free: true,
-    mp3: "https://www.jplayer.org/audio/mp3/Miaow-07-Bubble.mp3",
-    oga: "https://www.jplayer.org/audio/ogg/Miaow-07-Bubble.ogg",
+    mp3: trexRoar,
     poster: posterAudiotheme,
-    record: "Record Name",
-    title: "Bubble",
+    record: "Interactive examples (CC0)",
+    title: "T-Rex Roar",
   },
   {
-    artist: "Miaow",
-    mp3: "https://www.jplayer.org/audio/mp3/Miaow-01-Tempered-song.mp3",
-    oga: "https://www.jplayer.org/audio/ogg/Miaow-01-Tempered-song.ogg",
+    artist: "Mixkit",
+    mp3: mixkitArcadeBonusAlert,
     poster: posterAudiotheme,
-    record: "Record Name",
-    title: "Tempered Song",
+    record: "Mixkit Sound Effects Free License",
+    title: "Arcade bonus alert",
   },
   {
-    artist: "Miaow",
-    mp3: "https://www.jplayer.org/audio/mp3/Miaow-04-Lismore.mp3",
-    oga: "https://www.jplayer.org/audio/ogg/Miaow-04-Lismore.ogg",
+    artist: "Mixkit",
+    mp3: mixkitSoftInterfacePing,
     poster: posterAudiotheme,
-    record: "Record Name",
-    title: "Lismore",
+    record: "Mixkit Sound Effects Free License",
+    title: "Soft interface ping",
   },
   {
-    artist: "Miaow",
-    mp3: "https://www.jplayer.org/audio/mp3/Miaow-08-Stirring-of-a-fool.mp3",
-    oga: "https://www.jplayer.org/audio/ogg/Miaow-08-Stirring-of-a-fool.ogg",
+    artist: "Mixkit",
+    mp3: mixkitGameRewardSting,
     poster: posterAudiotheme,
-    record: "Record Name",
-    title: "Stirring of a Fool",
+    record: "Mixkit Sound Effects Free License",
+    title: "Game reward sting",
   },
 ];
 
