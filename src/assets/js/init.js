@@ -1,15 +1,13 @@
-import app from './app.js';
-import jPlayerManager from './jplayer.js';
+import app from "./app.js";
+import jPlayerManager from "./jplayer.js";
 
-// Initialize modules
-function init() {
+const init = () => {
   app.init();
   jPlayerManager.init();
-}
+};
 
-// Initialize when DOM is ready
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', init);
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", init);
 } else {
   init();
 }

@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @theme {
   --color-*: initial;
@@ -32,10 +32,10 @@
   --color-primary-950: #450a0a;
 }
 
-@import './base.css';
-@import './player/index.css';
-@import './player/controls.css';
-@import './player/playlist.css';
-@import './player/playlist-display.css';
-@import './player/progress-bar.css';
-@import './player/track.css';
+@import "./base.css";
+@import "./player/index.css";
+@import "./player/controls.css";
+@import "./player/playlist.css";
+@import "./player/playlist-display.css";
+@import "./player/progress-bar.css";
+@import "./player/track.css";
