@@ -56,7 +56,7 @@ class JPlayerManager {
   }
 
   static getSwfPath() {
-    return swfFile.replace(/\/[^/]*$/, "");
+    return swfFile.replace(/\/[^/]*$/u, "");
   }
 
   setupCurrentTrack() {
